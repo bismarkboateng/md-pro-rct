@@ -5,15 +5,8 @@ import { Button } from ".."
 
 
 
-const Links = [
-  {name: "Our story", id: Math.random()},
-  {name: "Membership", id: Math.random()},
-  {name: "Write", id: Math.random()},
-  {name: "Sign In", id: Math.random()},
 
-]
-
-export default function index() {
+export default function index(props) {
 
   return (
     <nav className={styles.nav}>
@@ -24,8 +17,7 @@ export default function index() {
         </div>
 
         <ul className={styles.navListItems}>
-          { Links.map((item) => (<li className={styles.navItem} key={item.id}>{item.name}</li>))}
-          <Button className={styles.getStarted}>Get started</Button>
+          {props.children}
         </ul>
       </section>
     </nav>

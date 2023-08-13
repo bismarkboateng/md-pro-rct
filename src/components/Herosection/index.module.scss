@@ -4,11 +4,10 @@
     flex-direction: row;
     justify-content: space-between;
     // align-items: center;
-    padding-left: 18%;
-    background: rgb(241, 182, 52);
+    padding-left: 17%;
+    // background: rgb(241, 182, 52);
+    background: orange;
     border-bottom: 1px solid rgba(25, 25, 25, 1);
-
-
 }
 
 .hero__curious {
@@ -43,6 +42,25 @@
     font-size: 20px;
 }
 
-.animation {
-    margin-top: 0px;
+// .animation {
+//     margin-top: 100px;
+// }
+
+
+@media screen and (max-width: 1200px) {
+    .hero__wrapper {
+        padding-left: 4.5%;
+    }
+}
+
+@media screen and (max-width: 481px) {
+    .animation {
+        display: none;
+    }
+
+    .hero__curious {
+        h1 {
+            font-size: 70px;
+        }
+    }
 }
