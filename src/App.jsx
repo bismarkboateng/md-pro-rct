@@ -1,11 +1,11 @@
 import styles from "./App.module.scss";
-
+import { Navbar } from "./components"
 
 function App() {
 
   return (
     <>
-      <h1>App Component</h1>
+      <Navbar />
     </>
   )
 }
