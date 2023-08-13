@@ -1,6 +1,9 @@
 import styles from "./index.module.scss";
 import { BsMedium } from "react-icons/bs";
 import { Button } from ".."
+// import { useEffect, useState } from "react";
+
+
 
 const Links = [
   {name: "Our story", id: Math.random()},
@@ -11,6 +14,7 @@ const Links = [
 ]
 
 export default function index() {
+
   return (
     <nav className={styles.nav}>
       <section className={styles.navWrapper}>

@@ -1,12 +1,13 @@
 import styles from "./App.module.scss";
-import { Navbar } from "./components"
+import { Navbar, Herosection } from "./components"
 
 function App() {
 
   return (
-    <>
-      <Navbar />
-    </>
+    <div>
+      {/* <Navbar /> */}
+      <Herosection />
+    </div>
   )
 }
 
