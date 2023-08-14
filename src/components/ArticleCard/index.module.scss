@@ -1,0 +1,78 @@
+
+
+.article__content {
+
+    h1 {
+        font-size: 20px;
+        color: #242424;
+        font-weight: 700;
+        text-overflow: ellipsis;
+    }
+}
+
+
+.profile__author {
+    display: flex;
+    align-items: center;
+
+
+    span {
+        font-size: 13px;
+        color: #242424;
+        font-weight: 550;
+    }
+}
+
+
+
+.profile__image {
+    width: 20px;
+    border-radius: 50%;
+}
+
+.sub__title {
+    font-size: 16px;
+    color: #6B6B6B;
+    font-weight: 400;
+    text-overflow: ellipsis;
+}
+
+
+.date__duration__tag__bookmark__svg {
+
+    svg {
+        color: #6B6B6B;
+        font-size: 25px;
+    }
+}
+
+.date__duration {
+    font-size: 13px;
+    color: #6B6B6B;
+    font-weight: 400;
+}
+
+.tag {
+    font-size: 13px;
+    color: #6B6B6B;
+    background: #F2F2F2;
+    padding: 2px 8px;
+    border-radius: 100px;
+
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+.article__image {
+    width: 175px;
+    // aspect-ratio: auto 200 / 134;
+    height: 130px;
+}
