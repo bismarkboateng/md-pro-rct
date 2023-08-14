@@ -15,6 +15,27 @@
     font-size: 14px;
 }
 
+// .article__discover__wrapper { 
+//     // border: 1px solid green;
+// }
+
+.article__discover {
+    // border: 1px solid red;
+    width: 66.5%;
+    margin: auto;
+    margin-top: 90px;
+
+    display: flex;
+
+}
+
+.articles {
+    width: 73%;
+}
+
+.discover {
+    width: 27%;
+}
 
 @media screen and (max-width: 540px) {
     .nav__item {

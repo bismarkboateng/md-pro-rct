@@ -1,5 +1,6 @@
 .trending__wrapper {
     margin-top: 50px;
+    border-bottom: 1px solid rgb(238, 235, 235);
 }
 
 .trending {
@@ -37,7 +38,7 @@
     display: flex;
     flex-direction: row;
     gap: 5%;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .trending__item__index {
