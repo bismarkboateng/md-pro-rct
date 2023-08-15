@@ -8,7 +8,7 @@ export default function index() {
     <section className={styles.articles}>
       <ul>
         { Articles.map((article) => (
-            <ArticleCard article={article} />
+            <ArticleCard key={article.index} article={article} />
         ))}
       </ul>
     </section>

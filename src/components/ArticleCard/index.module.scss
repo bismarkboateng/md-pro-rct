@@ -1,12 +1,21 @@
+.article__card__wrapper {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
 
 
 .article__content {
+    margin-top: 10px;
 
     h1 {
         font-size: 20px;
         color: #242424;
         font-weight: 700;
         text-overflow: ellipsis;
+        margin-bottom: 7px;
     }
 }
 
@@ -14,12 +23,14 @@
 .profile__author {
     display: flex;
     align-items: center;
+    margin-bottom: 8px;
 
 
     span {
         font-size: 13px;
         color: #242424;
         font-weight: 550;
+        margin-left: 6px;
     }
 }
 
@@ -35,29 +46,30 @@
     color: #6B6B6B;
     font-weight: 400;
     text-overflow: ellipsis;
+    margin-bottom: 10px;
 }
 
 
 .date__duration__tag__bookmark__svg {
+    display: flex;
+    align-items: center;
 
-    svg {
-        color: #6B6B6B;
-        font-size: 25px;
-    }
 }
 
 .date__duration {
     font-size: 13px;
     color: #6B6B6B;
     font-weight: 400;
+    margin-right: 4px;
 }
 
 .tag {
     font-size: 13px;
     color: #6B6B6B;
     background: #F2F2F2;
-    padding: 2px 8px;
+    padding: 8px 8px;
     border-radius: 100px;
+    margin-right: auto;
 
     cursor: pointer;
 }
@@ -68,7 +80,14 @@
 
 
 
-
+.svg__image {
+    svg {
+        color: #6B6B6B;
+        font-size: 25px;
+        margin-right: 30px;
+        margin-bottom: 10px;
+    }
+}
 
 
 .article__image {
