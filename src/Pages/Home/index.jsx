@@ -9,7 +9,7 @@ import Links from "./Links";
 export default function index() {
   return (
     <section>
-      <Navbar>
+      <Navbar bg={{background: ""}} wrap={{ }} iconColor={{}}>
         { Links.map((item) => (
           <Link to={item.name} style={{ textDecoration: "none", color: "black"}}>
             <li className={styles.navItem} key={item.id}>{item.name}</li>
