@@ -4,6 +4,7 @@
 
 
     article {
+        margin-bottom: 100px;
 
         p {
             line-height: 32px;
@@ -63,4 +64,22 @@
     margin-top: 100px;
     margin-bottom: 60px;
     margin-left: 35px;
+}
+
+.cta__wrapper {
+    border-top: 1px solid #F2F2F2;
+    padding: 56px 32px 64px;
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-size: 70px;
+    color: #FFFFFF;
+    padding: 56px 32px 64px;
+}
+
+
+.cta__wrapper:hover {
+    background: #fff;
+    color: #242424;
+    transition: all 0.5s ease;
 }

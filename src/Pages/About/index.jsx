@@ -1,9 +1,13 @@
 import styles from "./index.module.scss";
-import { Navbar, Buttons } from "../../components";
-import { style, wrap, iconColor} from "./inlinStyle";
+import { Navbar, Buttons, CTA } from "../../components";
+import { style, wrap, iconColor, cta } from "./styles";
 import { Link } from "react-router-dom";
+import { content } from "./Data";
+
+
 
 export default function index() {
+
   return (
     <section className={styles.about}>
       <Navbar bg={style} wrap={wrap} iconColor={iconColor}>
@@ -60,9 +64,19 @@ export default function index() {
         a post that helps you learn something new, or reconsider something<br />
         familiar—and then <Link to="/new-story" style={{ color: "rgba(255, 255, 255, 0.95)"}}>share your own story</Link>.
         </p>
-
-
       </article>
+
+      {
+        content.map((item) => (
+          <CTA 
+            key={item.id}
+            ctaStyles={cta}
+            className={styles.ctaWrapper}
+            title={item.text}
+            link={item.link}
+            onHover={styles.hover}
+          />
+      ))}
     </section>
   )
 }

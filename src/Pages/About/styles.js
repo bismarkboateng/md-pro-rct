@@ -10,3 +10,11 @@ export const wrap = {
 export const iconColor = {
     color: "#fff"
 }
+
+export const cta = {
+    ctaWrapperContent: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center"
+    }
+}
