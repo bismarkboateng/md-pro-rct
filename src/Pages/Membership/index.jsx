@@ -1,4 +1,4 @@
-import { Navbar, Button, MemHero } from "../../components";
+import { Navbar, Button, MemHero, Access, MeCarousel, NewDirections } from "../../components";
 import styles from "./index.module.scss";
 import Links from "../Home/Links";
 import { Link } from "react-router-dom";
@@ -20,7 +20,9 @@ export default function index() {
       </Button>
     </Navbar>
     <MemHero />
-    
+    <Access />
+    <MeCarousel />
+    <NewDirections />
    </main>
   )
 }

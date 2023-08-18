@@ -1,0 +1,43 @@
+.access {
+    display: flex;
+    flex-direction: row;
+    background: #4479ff;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px;
+    border-bottom: 1px solid #fff;
+}
+
+.story {
+    width: 50%;
+    border-right: 1px solid #fff;
+    padding: 30px;
+}
+
+.voices {
+    width: 50%;
+    padding: 30px;
+}
+
+.voices__title,
+.story__title {
+    font-size: 3.2vw;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #fff;
+    background-color: transparent;
+    font-weight: 500;
+    letter-spacing: -0.12vw;
+    line-height: 60px;
+    margin-bottom: 30px;
+}
+
+.voices__text,
+.story__text {
+    font-size: 19px;
+    color: #fff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+    margin-top: 30px;
+
+}
+
