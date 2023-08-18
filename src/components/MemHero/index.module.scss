@@ -1,0 +1,45 @@
+.mem__hero {
+    background: #4479ff;
+    border-bottom-color: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 105px;
+    padding-bottom: 105px;
+}
+
+.mem__header {
+    font-size: 7.3vw;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #fff;
+}
+
+.text { 
+    font-size: 18px;
+    color: #fff;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+
+.access {
+    padding: 9px 50px 10px;
+    outline: none;
+    border: 1px solid #fff;
+    color: #000;
+    background: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.access:hover {
+    background: #4479ff;
+    color: #fff;
+}

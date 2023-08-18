@@ -7,3 +7,4 @@ export { default as Button } from "./Button";
 export { default as Buttons } from "./Buttons";
 export { default as ArticleCard } from "./ArticleCard";
 export { default as CTA } from "./CTA";
+export { default as MemHero } from "./MemHero";
