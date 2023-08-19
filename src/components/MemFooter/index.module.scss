@@ -1,19 +1,51 @@
 .mem__footer {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: flex-start;
-    margin-left: 40px;
-    margin-right: 40px;
-    margin-top: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 24px 65px 24px 60px;
+
+
 
     div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        margin-right: auto;
+        gap: 10px;
+
 
         i {
-            font-size: 45px;
+            svg {
+                font-size: 45px;
+            }
         }
 
-        h1 {
-            font-size: 33px;
+        div {
+            font-size: 45px;
+            font-weight: 550;
+            margin-bottom: 5px;
+        }
+    }
+
+    p {
+        margin-right: auto;
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+
+        li {
+            font-size: 10px;
+            list-style-type: none;
+            color: #000;
         }
     }
 }

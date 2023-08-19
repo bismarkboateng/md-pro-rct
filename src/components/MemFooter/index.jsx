@@ -9,7 +9,7 @@ export default function index() {
     <footer className={styles.memFooter}>
         <div>
           <i><BsMedium /></i>
-          <h1>Medium</h1>
+          <div>Medium</div>
         </div>
 
         <p>Every idea needs a Medium</p>
