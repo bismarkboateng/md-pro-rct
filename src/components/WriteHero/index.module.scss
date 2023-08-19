@@ -1,0 +1,13 @@
+.write__hero__wrapper {
+    position: relative;
+    height: 60vh;
+    border: 1px solid red;
+}
+
+.write__image {
+    position: absolute;
+    top: -10;
+    z-index: -10;
+    height: 180%;
+    // width: 30%;
+}
