@@ -1,0 +1,19 @@
+.mem__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 40px;
+
+    div {
+
+        i {
+            font-size: 45px;
+        }
+
+        h1 {
+            font-size: 33px;
+        }
+    }
+}

@@ -8,6 +8,7 @@ export { default as Buttons } from "./Buttons";
 export { default as ArticleCard } from "./ArticleCard";
 export { default as CTA } from "./CTA";
 export { default as MemHero } from "./MemHero";
+export { default as MemFooter } from "./MemFooter";
 export { default as Access } from "./Access";
 export { default as MeCarousel } from "./MeCarousel";
 export { default as NewDirections } from "./NewDirections";

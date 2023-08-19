@@ -25,7 +25,12 @@
     font-size: 18px;
     border-radius: 20px;
     cursor: pointer;
-
     position: absolute;
     left: 45%;
+
+    transition: all 0.3s ease;
+}
+
+.access:hover {
+    opacity: 0.85;
 }
