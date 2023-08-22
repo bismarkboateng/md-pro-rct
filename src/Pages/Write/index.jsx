@@ -1,4 +1,4 @@
-import { Navbar, Buttons, CTA, WriteHero } from "../../components";
+import { Navbar, Buttons, CTA, WriteHero, ClickBait } from "../../components";
 import styles from "./index.module.scss";
 
 const style = {
@@ -25,6 +25,7 @@ export default function index() {
         />
       </Navbar>
       <WriteHero />
+      <ClickBait />
     </section>
   )
 }
