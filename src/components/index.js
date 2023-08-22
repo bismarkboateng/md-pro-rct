@@ -15,3 +15,4 @@ export { default as MeCarousel } from "./MeCarousel";
 export { default as NewDirections } from "./NewDirections";
 export { default as ClickBait } from "./ClickBait";
 export { default as Eligibility } from "./Eligibility";
+export { default as FAQ } from "./FAQ";

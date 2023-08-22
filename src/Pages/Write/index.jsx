@@ -1,4 +1,4 @@
-import { Navbar, Buttons, CTA, WriteHero, ClickBait, Eligibility } from "../../components";
+import { Navbar, Buttons, CTA, WriteHero, ClickBait, Eligibility, FAQ } from "../../components";
 import styles from "./index.module.scss";
 import {style, cta, iconColor, wrap } from "./Style";
 
@@ -21,6 +21,7 @@ export default function index() {
         link={""}
         onHover={styles.hover}
       />
+      <FAQ />
     </section>
   )
 }
