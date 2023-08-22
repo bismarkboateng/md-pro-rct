@@ -1,14 +1,13 @@
-.clickbait__wrapper {
+.eligibility__wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
     padding: 72px 32px 80px;
     border-bottom: 1px solid #242424;
-    // margin-bottom: 100px;
 }
 
-.clickbait {
+.eligible {
 
     h1 {
         font-size: 70px;
@@ -18,13 +17,6 @@
         font-weight: 400;
         line-height: 64px;
         margin-bottom: 30px;
-    }
-
-    p {
-        font-size: 21px;
-        line-height: 30px;
-        color: #242424;
-        font-family: 'Times New Roman', Times, serif;
     }
 }
 
