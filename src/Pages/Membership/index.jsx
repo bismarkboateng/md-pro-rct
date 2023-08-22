@@ -11,7 +11,7 @@ export default function index() {
    <main>
     <Navbar bg={bg} iconColor={iconColor} wrap={wrap}>
       {Links.map((item) => (
-        <Link to={item.name} style={{ textDecoration: "none", color: "#fff"}}>
+        <Link to={`/${item.name}`} style={{ textDecoration: "none", color: "#fff"}}>
           <li className={styles.navItem} key={item.id}>{item.name}</li>
         </Link>
       ))}

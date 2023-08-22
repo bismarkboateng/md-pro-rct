@@ -9,7 +9,7 @@ export default function index() {
         <img src={WriteHero} alt="write hero"
             className={styles.writeImage}
         />
-        <div>Medium Partener<br />Program</div>
+        <div>Medium Partner<br />Program</div>
         <p>
             Medium's Partner Program is for people<br />
             who are interested in helping us fulfill our<br />
