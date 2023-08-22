@@ -1,19 +1,6 @@
 import { Navbar, Buttons, CTA, WriteHero, ClickBait, Eligibility } from "../../components";
 import styles from "./index.module.scss";
-
-const style = {
-  background: "#fff",
-  borderBottom: "1px solid #000"
-}
-
-const wrap = {
-  width: "97%"
-}
-
-const iconColor = {
-  color: "#000"
-}
-
+import {style, cta, iconColor, wrap } from "./Style";
 
 export default function index() {
   return (
@@ -27,6 +14,13 @@ export default function index() {
       <WriteHero />
       <ClickBait />
       <Eligibility />
+      <CTA
+        ctaStyles={cta}
+        className={styles.ctaWrapper}
+        title="Apply now"
+        link={""}
+        onHover={styles.hover}
+      />
     </section>
   )
 }
