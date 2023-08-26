@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 export default function index(props) {
 
   return (
-    <nav className={styles.nav} style={props.bg || "" }>
+    <nav className={styles.nav} style={props.bg || ""}>
       <section className={styles.navWrapper} style={props.wrap || ""}>
         <Link style={{ textDecoration: "none", color: "black"}} to="/">
           <div className={styles.navIcon} style={props.iconColor}>

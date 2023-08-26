@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Links from "./Links";
 
 
-export default function index() {
+export default function index(props) {
   return (
     <footer className={styles.memFooter}>
         <div>
@@ -12,7 +12,7 @@ export default function index() {
           <div>Medium</div>
         </div>
 
-        <p>Every idea needs a Medium</p>
+        <p>{props.children}</p>
 
         <ul>
           { Links.map((link) => (

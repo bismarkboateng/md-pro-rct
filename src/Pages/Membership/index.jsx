@@ -23,7 +23,7 @@ export default function index() {
     <Access />
     <MeCarousel />
     <NewDirections />
-    <MemFooter />
+    <MemFooter>Every idea needs a Medium</MemFooter>
    </main>
   )
 }

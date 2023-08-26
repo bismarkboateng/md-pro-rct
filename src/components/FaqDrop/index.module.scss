@@ -1,0 +1,35 @@
+// .faq {
+//     margin-bottom: 40px;
+// }
+
+
+.faq__drop__header {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 550;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 30px;
+}
+
+.faq__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+    i {
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+
+        svg {
+            font-size: 30px;
+            font-weight: 400;
+        }
+
+        &:hover {
+            transform: scale(1.1, 1.1);
+        }
+    }
+}
