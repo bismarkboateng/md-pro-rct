@@ -38,11 +38,10 @@ export default function index() {
       <div className={styles.articleDiscoverWrapper}>
         <div className={styles.articleDiscover}>
           <div className={styles.articles}>
-            <ArticleList />
+              <ArticleList />
           </div>
-
           <div className={styles.discover}>
-            <Discover />
+              <Discover />
           </div>
         </div>
       </div>

@@ -48,3 +48,22 @@
     }
 
 }
+
+@media (max-width: 330px) {
+    .get__started {
+        padding: 12px 15px;
+        font-size: 10px;
+        font-weight: 500;
+    }
+
+    .article__discover {
+        display: flex;
+        width: 90%;
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    .discover {
+        width: 100%;
+    }
+}

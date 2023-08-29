@@ -64,3 +64,13 @@
         }
     }
 }
+
+@media (max-width: 330px) {
+    .hero__curious {
+        margin-top: 50px;
+    }
+
+    .hero__wrapper {
+        height: 500px;
+    }
+}

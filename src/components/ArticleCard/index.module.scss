@@ -74,12 +74,6 @@
     cursor: pointer;
 }
 
-
-
-
-
-
-
 .svg__image {
     svg {
         color: #6B6B6B;
@@ -94,4 +88,17 @@
     width: 175px;
     // aspect-ratio: auto 200 / 134;
     height: 130px;
+}
+
+@media screen and (max-width: 330px) {
+    // .article__image {
+        
+    // }
+    
+    .article__card__wrapper {
+        width: 100%;
+    }
+    .article__image {
+        width: 80px;
+    }
 }
