@@ -84,3 +84,55 @@
     color: #242424;
     transition: all 0.5s ease;
 }
+
+@media screen and (max-width: 1200px) {
+    .about {
+        article {
+            div {
+                width: 52%;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .about {
+        article {
+            div {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 738px) {
+     .about {
+        article {
+            div {
+                width: 80%;
+            }
+        }
+    }   
+}
+
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 48px;
+        line-height: 50px;
+        margin-top: 50px;
+    }
+
+    .cta__wrapper {
+        font-size: 32px;
+        padding: 32px 20px 40px;
+    }
+
+    .about {
+        article {
+            div {
+                width: 90%;
+            }
+        }
+    }
+}
