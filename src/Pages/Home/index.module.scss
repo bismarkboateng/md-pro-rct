@@ -35,6 +35,21 @@
     width: 27%;
 }
 
+@media screen and (max-width: 1200px) {
+    .article__discover {
+        width: 91%;
+    }
+
+    .discover {
+        width: 30%;
+    }
+
+    .articles {
+        width: 60%;
+        margin-right: 50px;
+    }
+}
+
 @media screen and (max-width: 829px) {
     .article__discover {
         width: 90%;

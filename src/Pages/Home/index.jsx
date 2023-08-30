@@ -1,5 +1,5 @@
 import { Navbar } from "../../components"
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import styles from "./index.module.scss";
 import { Button, Herosection, Trending, ArticleList, Discover } from "../../components"
 import { Link } from "react-router-dom";
@@ -8,8 +8,19 @@ import Links from "./Links";
 
 
 export default function index() {
-  const [modal, setModal] = useState(false);
-  const width = 0;
+  // const [modal, setModal] = useState(false);
+  const [innerWidth, setInnerWidth] = useState(window.innerWidth)
+
+
+  useEffect(() => {
+
+    window.addEventListener("resize", () => {
+      setInnerWidth(window.innerWidth)
+    })
+
+  }, [innerWidth])
+
+  console.log(innerWidth)
 
   function onSignInClickHandler() {
     console.log("Sign in click")
@@ -39,7 +50,7 @@ export default function index() {
       <div className={styles.articleDiscoverWrapper}>
         <div className={styles.articleDiscover}>
             {
-              width < (330 || 480 || 767) ?
+              innerWidth <= (330 || 480 || 767) ?
               (
               <>
                 <div className={styles.discover}>
