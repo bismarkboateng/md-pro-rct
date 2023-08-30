@@ -9,6 +9,7 @@ import Links from "./Links";
 
 export default function index() {
   const [modal, setModal] = useState(false);
+  const width = 0;
 
   function onSignInClickHandler() {
     console.log("Sign in click")
@@ -37,12 +38,30 @@ export default function index() {
       <Trending />
       <div className={styles.articleDiscoverWrapper}>
         <div className={styles.articleDiscover}>
-          <div className={styles.articles}>
-              <ArticleList />
-          </div>
-          <div className={styles.discover}>
-              <Discover />
-          </div>
+            {
+              width < (330 || 480 || 767) ?
+              (
+              <>
+                <div className={styles.discover}>
+                    <Discover />
+                </div>
+
+                <div className={styles.articles}>
+                    <ArticleList />
+                </div>
+              </>
+              ) : 
+              (
+              <>
+                <div className={styles.articles}>
+                    <ArticleList />
+                </div>
+                <div className={styles.discover}>
+                    <Discover />
+                </div>
+              </>
+              )
+            }
         </div>
       </div>
     </section>

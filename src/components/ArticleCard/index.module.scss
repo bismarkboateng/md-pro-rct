@@ -5,8 +5,6 @@
     margin-bottom: 50px;
 }
 
-
-
 .article__content {
     margin-top: 10px;
 
@@ -34,8 +32,6 @@
     }
 }
 
-
-
 .profile__image {
     width: 20px;
     border-radius: 50%;
@@ -48,7 +44,6 @@
     text-overflow: ellipsis;
     margin-bottom: 10px;
 }
-
 
 .date__duration__tag__bookmark__svg {
     display: flex;
@@ -83,11 +78,85 @@
     }
 }
 
-
 .article__image {
     width: 175px;
     // aspect-ratio: auto 200 / 134;
     height: 130px;
+}
+
+@media screen and (max-width: 767px) {
+    .article__card__wrapper {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .article__card__wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .svg__image {
+        svg {
+            position: absolute;
+            left: 60%;
+        }
+    }
+}
+
+@media screen and (max-width: 488px) {
+    .article__image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .article__content {
+        margin-top: 0px;
+    }
+
+    .svg__image {
+        svg {
+            position: absolute;
+            left: 330px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .article__card__wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .article__image {
+        width: 100px;
+    }
+
+    .article__content {
+        margin-top: 0;
+    }
+
+    .svg__image {
+        svg {
+            position: absolute;
+            left: 310px;
+        }
+    }
+}
+
+@media screen and (max-width: 406px) {
+    .svg__image {
+        svg {
+            position: absolute;
+            left: 260px;
+        }
+    }
 }
 
 @media screen and (max-width: 330px) {

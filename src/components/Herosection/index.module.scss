@@ -53,6 +53,22 @@
     }
 }
 
+@media screen and (max-width: 590px) {
+    .hero__curious {
+        h1 {
+            font-size: 85px;
+        }
+    }
+}
+
+@media screen and (max-width: 488px) {
+    .hero__curious {
+        h1 {
+            font-size: 70px;
+        }
+    }
+}
+
 @media screen and (max-width: 481px) {
     .animation {
         display: none;

@@ -2,6 +2,12 @@
 //     // border: 1px solid red;
 // }
 
+@media screen and (max-width: 480px) {
+    .articles {
+        width: inherit;
+    }
+}
+
 @media screen and (max-width: 330px) {
     .articles {
         width: 300px;
