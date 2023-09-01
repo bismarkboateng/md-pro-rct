@@ -1,15 +1,17 @@
-import { Navbar } from "../../components"
-import { Fragment, useState, useEffect } from "react";
+import { Navbar, Modal } from "../../components"
+import { Fragment, useState, useEffect, useContext } from "react";
 import styles from "./index.module.scss";
 import { Button, Herosection, Trending, ArticleList, Discover } from "../../components"
 import { Link } from "react-router-dom";
 import Links from "./Links";
+import ModalContext from "../../store/modal-context";
 
 
 
 export default function index() {
   // const [modal, setModal] = useState(false);
   const [innerWidth, setInnerWidth] = useState(window.innerWidth)
+  const contextValue = useContext(ModalContext)
 
 
   useEffect(() => {
@@ -20,19 +22,15 @@ export default function index() {
 
   }, [innerWidth])
 
-  console.log(innerWidth)
-
-  function onSignInClickHandler() {
-    console.log("Sign in click")
-  }
 
   return (
     <section>
+      { contextValue.isSignInModalOpen && <Modal /> }
       <Navbar bg={{background: ""}} wrap={{ }} iconColor={{}}>
         { Links.map((item) => (
            <Fragment key={item.id}>
             { item.name === "Sign in"
-            ? (<li className={styles.navItem} onClick={onSignInClickHandler}>{item.name}</li>)
+            ? (<li className={styles.navItem} onClick={contextValue.onSignInClickHandler}>{item.name}</li>)
             : (
               <Link to={item.name} style={{ textDecoration: "none", color: "black"}}>
                 <li className={styles.navItem} >{item.name}</li>
@@ -42,7 +40,9 @@ export default function index() {
            </Fragment>
         ))}
 
-        <Button className={styles.getStarted}>Get started</Button>
+        <Button className={styles.getStarted}
+          onClick={contextValue.onSignInClickHandler}
+        >Get started</Button>
       </Navbar>
       
       <Herosection />
