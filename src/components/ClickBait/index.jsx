@@ -21,7 +21,9 @@ export default function index() {
         <section className={styles.paragraph}>
             <ul>
                 {Text.map((item) => (
-                    <li key={item.id} style={{ borderBottom: item.id !== 3 ? ' 1px solid rgb(226, 224, 224)' : ''}}>
+                    <li key={item.id} style={{ borderBottom: item.id !== 3 ? ' 1px solid rgb(226, 224, 224)' : '',
+                        marginTop: item.id === 0 ? "50px" : ""
+                    }}>
                         <h4 style={{ marginTop: item.id !== 0 ? '30px' : ''}}>{item.title}</h4>
                         <p>{item.text}</p>
                     </li>

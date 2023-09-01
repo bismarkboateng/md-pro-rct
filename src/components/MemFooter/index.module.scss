@@ -50,6 +50,24 @@
     }
 }
 
+
+@media screen and (max-width: 1280px) {
+    .mem__footer {
+            .mem__footer__medium_icon {
+                i {
+                    svg {
+                        font-size: 30px;
+                    }
+                }
+        
+                div {
+                    font-size: 30px;
+                }
+            }
+    }
+}
+
+
 @media screen and (max-width: 760px) {
     .mem__footer {
         display: flex;

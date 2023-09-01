@@ -43,3 +43,29 @@
     color: #fff;
     border: none;
 }
+
+@media screen and (max-width: 768px) {
+    .write__hero__wrapper {
+        div {
+            font-size: 85px;
+            letter-spacing: -0.055em;
+            line-height: 88px;
+        }
+    }
+}
+
+@media screen and (max-width: 506px) {
+    .write__hero__wrapper {
+        div {
+            font-size: 48px;
+            letter-spacing: -0.04em;
+            line-height: 52px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 500;
+        }
+    }    
+}

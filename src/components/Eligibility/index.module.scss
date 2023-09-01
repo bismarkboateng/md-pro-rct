@@ -20,12 +20,6 @@
     }
 }
 
-
-
-
-
-
-
 .paragraph {
     width: 30%;
     margin-right: 120px;
@@ -47,6 +41,44 @@
                 color: #6B6B6B;
                 font-weight: 400;
             }
+        }
+    }
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    // .eligible {
+    //     p {
+    //         font-size: 21px;
+    //         line-height: 32px;
+    //         letter-spacing: -0.003em;
+    //     }
+    // }
+
+    .paragraph {
+        width: 35%;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .eligibility__wrapper {
+        flex-direction: column;
+    }
+
+    .paragraph {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 444px) {
+    .eligible {
+        h1 {
+            font-size: 32px;
+            letter-spacing: -0.035em;
+            line-height: 36px;
         }
     }
 }
