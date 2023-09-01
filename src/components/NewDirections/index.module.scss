@@ -13,8 +13,6 @@
     margin-bottom: 30px;
 }
 
-
-
 .access {
     padding: 9px 35px 10px;
     outline: none;
@@ -33,4 +31,41 @@
 
 .access:hover {
     opacity: 0.85;
+}
+
+
+@media screen and (max-width: 767px) {
+    .header {
+        font-size: 60px;
+        line-height: 55px;
+    }
+
+    .access {
+        left: 33%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .access {
+        left: 24%;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .header {
+        font-size: 40px;
+        line-height: 30px;
+    }
+
+    .access {
+        left: 20%;
+    }
+}
+
+
+@media screen and (max-width: 296px) {
+    .access {
+        padding: 8px 32px 10px;
+        left: 12%;
+    }
 }

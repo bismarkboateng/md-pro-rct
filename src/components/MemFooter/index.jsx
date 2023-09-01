@@ -7,12 +7,12 @@ import Links from "./Links";
 export default function index(props) {
   return (
     <footer className={styles.memFooter}>
-        <div>
+        <div className={styles.memFooterMediumIcon}>
           <i><BsMedium /></i>
           <div>Medium</div>
         </div>
 
-        <p>{props.children}</p>
+        <p className={styles.memFooterText}>{props.children}</p>
 
         <ul>
           { Links.map((link) => (

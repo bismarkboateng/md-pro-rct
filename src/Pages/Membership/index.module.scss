@@ -15,3 +15,35 @@
     border-radius: 20px;
     cursor: pointer;
 }
+
+@media screen and (max-width: 760px) {
+    .nav__item {
+        display: none;
+    }
+
+    .access {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 558px) {
+    .access {
+        font-size: 13px;
+        padding: 5px 25px 5px 25px;
+        border-radius: 6px;
+    }
+
+    .nav__item {
+        display: none;
+    }
+
+    main {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 296px) {
+    .access {
+        display: none;
+    }
+}

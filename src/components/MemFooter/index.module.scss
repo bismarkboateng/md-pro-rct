@@ -8,7 +8,7 @@
 
 
 
-    div {
+    .mem__footer__medium_icon {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -30,7 +30,7 @@
         }
     }
 
-    p {
+    .mem__footer__text {
         margin-right: auto;
         font-size: 20px;
         font-weight: 400;
@@ -47,5 +47,86 @@
             list-style-type: none;
             color: #000;
         }
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .mem__footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .mem__footer__medium_icon {
+            margin-left: 200px;
+        }
+
+        .mem__footer__text {
+            margin-left: 200px;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 558px) {
+    .mem__footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .mem__footer__medium_icon {
+            margin-left: 120px;
+        }
+
+        .mem__footer__text {
+            margin-left: 120px;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .mem__footer {
+        .mem__footer__medium_icon,
+        .mem__footer__text {
+            margin-left: 65px;
+        }
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .mem__footer {
+        .mem__footer__medium_icon,
+        .mem__footer__text {
+            margin-left: 25px;
+        }
+    } 
+}
+
+@media screen and (max-width: 296px) {
+    .mem__footer {
+            .mem__footer__medium_icon {
+                margin-right: 0;
+                margin-left: 5px;
+
+                i {
+                    svg {
+                        font-size: 30px;
+                    }
+                }
+        
+                div {
+                    font-size: 30px;
+                }
+            }
+
+            .mem__footer__text {
+                margin-left: 6px;
+            }
     }
 }

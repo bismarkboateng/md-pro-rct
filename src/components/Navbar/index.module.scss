@@ -69,6 +69,23 @@
     }
 }
 
+@media screen and (max-width: 760px) {
+    .medium__icon {
+        svg {
+            font-size: 30px;
+        }
+    }
+
+    .nav__icon {
+        h1 {
+            font-size: 25px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    }
+}
+
+
+
 @media screen and (max-width: 481px) {
     .nav__item {
         display: none;
@@ -83,6 +100,21 @@
     .medium__icon {
         svg {
             font-size: 40px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 296px) {
+    .medium__icon {
+        svg {
+            font-size: 35px;
+        }
+    }
+
+    .nav__icon {
+        h1 {
+            font-size: 35px;
         }
     }
 }

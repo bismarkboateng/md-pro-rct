@@ -43,3 +43,58 @@
     background: #4479ff;
     color: #fff;
 }
+
+
+@media screen and (max-width: 558px) {
+    .mem__header {
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width: 431px){
+    .mem__hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        padding-left: 20px;
+    }
+
+    .text {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .mem__header {
+        font-size: 40px;
+    }
+
+    .text {
+        text-align: left;
+        margin-left: 29px;
+    }
+
+    .access {
+        margin-right: 30px;
+    }
+}
+
+@media screen and (max-width: 296px) {
+    .access {
+        padding: 8px 32px 10px;
+        margin-left: 15px;
+        font-size: 18px;
+        letter-spacing: -0.2px;
+    }
+
+    .mem__header {
+        margin-left: 20px;
+    }
+
+    .text {
+        margin-left: 20px;
+    }
+}
+

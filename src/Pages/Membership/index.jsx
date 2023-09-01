@@ -16,7 +16,7 @@ export default function index() {
         </Link>
       ))}
       <Button className={styles.access}>
-        Get unlimited access
+        { window.innerWidth <= 558 ? "Get started" : "Get unlimited access"}
       </Button>
     </Navbar>
     <MemHero />

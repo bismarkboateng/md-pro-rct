@@ -41,3 +41,44 @@
 
 }
 
+@media screen and (max-width: 767px) {
+    .voices__title,
+    .story__title {
+        font-size: 28px;
+        line-height: 30px;
+    }
+
+    .m_image {
+        width: 206px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .m_image {
+        width: 169px;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .access {
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    .story {
+        border-right: none;
+        width: 95%;
+        padding: 0;
+        padding-bottom: 25px;
+        margin-top: 30px;
+    }
+
+    .voices {
+        width: 95%;
+        padding: 0;
+        // margin-top: 20px;
+        border-top: 1px solid #fff;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
