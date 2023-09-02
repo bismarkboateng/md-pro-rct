@@ -1,7 +1,7 @@
 import { Button } from "..";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillApple } from "react-icons/ai";
-// import { TfiTwitter } from "react-icons/tf";
+import { BsTwitter } from "react-icons/bs";
 import { SlEnvolope } from "react-icons/sl";
 import { BsFacebook } from "react-icons/bs";
 import classes from "./index.module.scss"
@@ -36,22 +36,22 @@ export default function index() {
             </div> 
 
             <div>
-              <i><FcGoogle /></i>
+              <i><BsFacebook /></i>
               <span>Sign in with Facebook</span>
             </div> 
 
             <div>
-              <i><FcGoogle /></i>
+              <i><AiFillApple /></i>
               <span>Sign in with Apple</span>
             </div> 
 
             <div>
-              <i><FcGoogle /></i>
+              <i><BsTwitter /></i>
               <span>Sign in with Twitter</span>
             </div> 
 
             <div>
-              <i><FcGoogle /></i>
+              <i><SlEnvolope /></i>
               <span>Sign in with Email</span>
             </div> 
           </section>

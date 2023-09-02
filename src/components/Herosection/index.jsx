@@ -1,8 +1,12 @@
 import styles from "./index.module.scss";
 import { Button } from "..";
+import { useContext } from "react";
+import ModalContext from "../../store/modal-context";
 
 
 export default function index() {
+  const contextValue = useContext(ModalContext)
+
   return (
     <section className={styles.heroWrapper}>
 
@@ -12,7 +16,11 @@ export default function index() {
         Discover stories, thinking, and expertise<br />
         from writers on any topic.
         </div>
-        <Button className={styles.heroButton}>Start reading</Button>
+        <Button className={styles.heroButton}
+          onClick={contextValue.onSignInClickHandler}
+        >
+          Start reading
+        </Button>
       </div>
 
       <div className={styles.animation}>
