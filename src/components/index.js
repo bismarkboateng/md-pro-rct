@@ -18,3 +18,6 @@ export { default as Eligibility } from "./Eligibility";
 export { default as FAQ } from "./FAQ";
 export { default as Modal } from "./Modal";
 export { default as FaqDrop } from "./FaqDrop";
+export { default as TextIconButton } from "./TextIconButton";
+export { default as ModalSignIn } from "./ModalSignIn";
+export { default as ModalSignUp } from "./ModalSignUp";

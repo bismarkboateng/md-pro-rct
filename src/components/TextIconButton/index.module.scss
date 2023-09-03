@@ -1,0 +1,17 @@
+.input__div {
+    border:1px solid #242424;
+    padding: 8px;
+    border-radius: 20px;
+    margin-bottom: 13px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+
+    i {
+        margin-right: 70px;
+        
+        svg {
+            font-size: 18px;
+        }
+    }
+}
