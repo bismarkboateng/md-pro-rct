@@ -16,7 +16,7 @@ export default function index(props) {
             key={item.id}
             icon={item.icon}
             text={item.text}
-            onClick={props.onEmailClick}
+            onClick={props.onEmailButtonClick}
             />
         ))}
         </section>

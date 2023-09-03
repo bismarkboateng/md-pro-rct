@@ -16,12 +16,12 @@ export default function index(props) {
             key={item.id}
             icon={item.icon}
             text={item.text}
-            onClick={props.onEmailClick}
+            // onClick={props.onEmailClick}
             />
         ))}
         </section>
 
-        <p className={classes.createOne}>Already have an account? <span className={classes.link} onClick={props.onClick}>Sign in</span> </p>
+        <p className={classes.createOne}>Already have an account? <span className={classes.link} onClick={props.onClickSignIn}>Sign in</span> </p>
 
         <small className={classes.privacy}>
         Click “Sign In” to agree to Medium's <span style={{ textDecoration: "underline"}}>Terms of Service</span> and acknowledge that

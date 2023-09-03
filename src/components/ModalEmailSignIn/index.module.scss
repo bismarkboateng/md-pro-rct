@@ -73,4 +73,9 @@
     cursor: pointer;
     font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.email__button:hover {
+    background: #000000;
 }

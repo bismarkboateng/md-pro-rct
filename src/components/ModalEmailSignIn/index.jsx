@@ -6,11 +6,15 @@ import { Button } from ".."
 
 
 
-export default function index() {
+export default function index(props) {
   const [email, setEmail] = useState("")
 
   function onInputFieldChange(event) {
     setEmail(event.target.value)
+  }
+
+  function onClickEmailButton() {
+    console.log("Email button clicked")
   }
 
   return (
@@ -30,12 +34,12 @@ export default function index() {
 
         <Button
           className={classes.emailButton}
-          onClick={console.log("email Button clicked")}
+          onClick={onClickEmailButton}
         >
           Continue
         </Button>
         
-        <div className={classes.all}>
+        <div className={classes.all} onClick={props.onClickSignIn}>
             <i><GoChevronLeft /></i>
             <p>All sign in options</p>
         </div>

@@ -9,17 +9,30 @@ import { ModalSignIn, ModalSignUp, ModalEmailSignIn} from ".."
 
 
 export default function index() {
-  const [createOneClick, setCreateOneClick] = useState(false)
-  const [isClickEmailButton, setIsClickEmailButton] = useState(false)
+  const [isCreateOne, setOnClickCreateOne] = useState(false)
+  const [isSignIn, setIsSignIn] = useState(true)
+  const [isClickEmailSignInButton, setIsClickEmailSignInButton] = useState(false)
+  // const [isSignInOptions, setIsSignInOptions] = useState(false)
+
+  function onClickSignIn() {
+    setIsSignIn(true)
+    setOnClickCreateOne(false)
+    setIsClickEmailSignInButton(false)
+  }
 
   function onCreateOneClick() {
-    setCreateOneClick(prevState => !prevState)
+    setOnClickCreateOne(true)
+    setIsSignIn(false)
+    setIsClickEmailSignInButton(false)
   }
 
-  function onEmailClickHandler() {
-    console.log(isClickEmailButton)
-    setIsClickEmailButton(prevState => !prevState)
+  function onEmailButtonClick() {
+    setIsClickEmailSignInButton(true)
+    setOnClickCreateOne(false)
+    setIsSignIn(false)
   }
+
+  console.log(isCreateOne, isSignIn, isClickEmailSignInButton)
 
   const contextValue = useContext(ModalContext)
 
@@ -33,9 +46,28 @@ export default function index() {
           onClick={contextValue.onSignInClickHandler}
         />
 
+        <div className={classes.modalContent}>
+          { isCreateOne && <ModalSignUp onClickSignIn={onClickSignIn} />}
+          { isSignIn && <ModalSignIn onEmailButtonClick={onEmailButtonClick} onClick={onCreateOneClick}/>}
+          { isClickEmailSignInButton && <ModalEmailSignIn onClickSignIn={onClickSignIn} /> }
+        </div>
+       {/* { createOneClick && (
+        <div className={classes.modalContent}>
+          <ModalSignUp onEmailClick={onEmailClickHandler} onClick={onCreateOneClick}/> 
+        </div>
+       )} */}
+
+
+       {/* { createOneClick && (
+        <div className={classes.modalContent}>
+          <ModalSignIn onEmailClick={onEmailClickHandler} onClick={onCreateOneClick}/>
+        </div>
+       )} */}
+
+{/* 
         {isClickEmailButton ? (
         <div className={classes.modalContent}>
-          <ModalEmailSignIn />
+          <ModalEmailSignIn onSignInClick={onSignInOptionClick} />
         </div>
         ) : (
         <div className={classes.modalContent}>
@@ -45,6 +77,14 @@ export default function index() {
         </div>
         )}
 
+        {isSignInOptions && (
+          <div className={classes.modalContent}>
+            {createOneClick ? 
+            (<ModalSignUp onEmailClick={onEmailClickHandler} onClick={onCreateOneClick}/>) 
+            :( <ModalSignIn onEmailClick={onEmailClickHandler} onClick={onCreateOneClick}/>)}
+          </div>
+        )} */}
+           
       </section>
 
     </>,
