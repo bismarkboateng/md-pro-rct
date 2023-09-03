@@ -21,3 +21,5 @@ export { default as FaqDrop } from "./FaqDrop";
 export { default as TextIconButton } from "./TextIconButton";
 export { default as ModalSignIn } from "./ModalSignIn";
 export { default as ModalSignUp } from "./ModalSignUp";
+export { default as ModalEmailSignIn } from "./ModalEmailSignIn";
+export { default as Input } from "./Input";
