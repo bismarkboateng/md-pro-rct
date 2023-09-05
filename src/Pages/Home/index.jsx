@@ -9,7 +9,6 @@ import ModalContext from "../../store/modal-context";
 
 
 export default function index() {
-  // const [modal, setModal] = useState(false);
   const [innerWidth, setInnerWidth] = useState(window.innerWidth)
   const contextValue = useContext(ModalContext)
 

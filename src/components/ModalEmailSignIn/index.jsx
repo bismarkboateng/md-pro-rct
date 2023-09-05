@@ -3,6 +3,7 @@ import { GoChevronLeft } from "react-icons/go"
 import { Input } from ".."
 import { useState } from "react"
 import { Button } from ".."
+import { emailSignIn } from "../../utils/signInMethods"
 
 
 
@@ -12,9 +13,9 @@ export default function index(props) {
   function onInputFieldChange(event) {
     setEmail(event.target.value)
   }
-
+  
   function onClickEmailButton() {
-    console.log("Email button clicked")
+    emailSignIn(email)
   }
 
   return (

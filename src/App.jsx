@@ -1,11 +1,8 @@
 // import styles from "./App.module.scss";
 import {Route, Routes } from "react-router-dom";
-import { About, Membership, Write, Signin, Home } from "./Pages";
+import { About, Membership, Write, Signin, Home, UserPage} from "./Pages";
 
 function App() {
-
-
-
   return (
     <div>
       <Routes>
@@ -13,6 +10,7 @@ function App() {
         <Route path="/our story" element={<About />} />
         <Route path="/Membership" element={<Membership />} />
         <Route path="/write" element={<Write />} />
+        <Route path="/user-page" element={<UserPage/>} />
         {/* <Route path="/Sign In" element={<Signin />} /> */}
       </Routes>
     </div>
