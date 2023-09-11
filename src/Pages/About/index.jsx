@@ -10,7 +10,7 @@ export default function index() {
 
   return (
     <section className={styles.about}>
-      <Navbar bg={style} wrap={wrap} iconColor={iconColor}>
+      <Navbar bg={style} wrap={wrap} iconColor={iconColor} title="Medium">
         <Buttons 
           signInClassName={styles.signIn}
           signUpClassName={styles.signUp}

@@ -25,7 +25,7 @@ export default function index() {
   return (
     <section>
       { contextValue.isSignInModalOpen && <Modal /> }
-      <Navbar bg={{background: ""}} wrap={{ }} iconColor={{}}>
+      <Navbar bg={{background: ""}} wrap={{ }} iconColor={{}} title="Medium">
         { Links.map((item) => (
            <Fragment key={item.id}>
             { item.name === "Sign in"

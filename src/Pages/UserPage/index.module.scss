@@ -1,0 +1,51 @@
+.user__page {
+    padding: 0;
+}
+
+.search__field {
+    margin-right: auto;
+}
+
+.user__actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 45px;
+    font-size: 19px;
+    color: #6B6B6B;
+    margin-left: 253%;
+
+    i {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+        
+        svg {
+            font-size: 20px;
+        }
+        
+    }
+}
+
+.notification {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+        color: #6B6B6B;
+    }
+}
+
+.user__image {
+    border-radius: 50%;
+}

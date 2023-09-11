@@ -15,7 +15,7 @@ export default function index(props) {
         <Link style={{ textDecoration: "none", color: "black"}} to="/">
           <div className={styles.navIcon} style={props.iconColor}>
             <i className={styles.mediumIcon}><BsMedium /></i>
-            <h1>Medium</h1>
+            <h1>{props.title}</h1>
           </div>
         </Link>
 

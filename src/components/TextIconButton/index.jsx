@@ -9,8 +9,10 @@ export default function index(props) {
 
   function onSignInButtonClickHandler() {
     if (signInAccount(props.text)) {
+      // console.log()
       navigate("/user-page")
     }
+
   }
 
   return (

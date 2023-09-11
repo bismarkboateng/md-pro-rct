@@ -24,3 +24,4 @@ export { default as ModalSignUp } from "./ModalSignUp";
 export { default as ModalEmailSignIn } from "./ModalEmailSignIn";
 export { default as Input } from "./Input";
 export { default as ModalEmailSignUp } from "./ModalEmailSignUp";
+export { default as Search } from "./Search";

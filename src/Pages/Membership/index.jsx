@@ -9,7 +9,7 @@ import { bg, wrap, iconColor } from "./Style";
 export default function index() {
   return (
    <main>
-    <Navbar bg={bg} iconColor={iconColor} wrap={wrap}>
+    <Navbar bg={bg} iconColor={iconColor} wrap={wrap} title="Medium">
       {Links.map((item) => (
         <Link to={`/${item.name}`} style={{ textDecoration: "none", color: "#fff"}}>
           <li className={styles.navItem} key={item.id}>{item.name}</li>
