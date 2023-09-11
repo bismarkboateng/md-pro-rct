@@ -2,7 +2,7 @@ import { CiSearch } from "react-icons/ci"
 import classes from "./index.module.scss"
 
 
-export default function index() {
+export default function index({ searchTerm, setSearchTerm}) {
   return (
     <div className={classes.search}>
         <i className={classes.searchIcon}>
@@ -12,8 +12,8 @@ export default function index() {
             type="text"
             placeholder="Search Medium"
             className={classes.searchInput}
-            value=""
-            onChange={() => {}}
+            value={searchTerm}
+            onChange={(event) => {setSearchTerm(event.target.value)}}
         />
     </div>
   )

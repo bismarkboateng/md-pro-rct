@@ -49,3 +49,50 @@
 .user__image {
     border-radius: 50%;
 }
+
+.user__content {
+    width: 59%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.article__list {
+    width: 70%;
+    border-right: 1px solid #F2F2F2;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    color: #6B6B6B;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 30px;
+    // border: 1px solid red;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    margin-bottom: 40px;
+
+    li {
+        list-style-type: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        svg {
+            font-size: 20px;
+        }
+        
+        &:hover {
+            color: #000;
+        }
+    }
+}
+
+.miscellaneous {
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 25%;
+}
