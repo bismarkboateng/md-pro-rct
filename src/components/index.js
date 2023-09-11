@@ -26,3 +26,5 @@ export { default as Input } from "./Input";
 export { default as ModalEmailSignUp } from "./ModalEmailSignUp";
 export { default as Search } from "./Search";
 export { default as ProfileDropDown } from "./ProfileDropDown";
+export { default as TrendCard } from "./TrendCard";
+export { default as StaffPicks } from "./StaffPicks";

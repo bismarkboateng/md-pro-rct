@@ -9,7 +9,7 @@ import { BiChevronDown } from "react-icons/bi"
 import { Navbar, Search } from "../../components"
 import { bg, wrap } from "./styles"
 import classes from "./index.module.scss"
-import { ArticleList, ProfileDropDown } from "../../components"
+import { ArticleList, ProfileDropDown, StaffPicks } from "../../components"
 
 
 
@@ -61,7 +61,7 @@ export default function index() {
         </section>
 
         <section className={classes.miscellaneous}>
-         Miscellaneous
+          <StaffPicks />
         </section>
       </section>
 

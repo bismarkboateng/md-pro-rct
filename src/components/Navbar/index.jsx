@@ -1,8 +1,6 @@
 import styles from "./index.module.scss";
 import { BsMedium } from "react-icons/bs";
 import { Link } from "react-router-dom";
-// import { Button } from ".."
-// import { useEffect, useState } from "react";
 
 
 
