@@ -9,7 +9,7 @@ import { BiChevronDown } from "react-icons/bi"
 import { Navbar, Search } from "../../components"
 import { bg, wrap } from "./styles"
 import classes from "./index.module.scss"
-import { ArticleList } from "../../components"
+import { ArticleList, ProfileDropDown } from "../../components"
 
 
 
@@ -27,8 +27,6 @@ export default function index() {
     const user = localStorage.getItem("user")
     console.log(user)
   }, [])
-
-  console.log(actionClick)
 
   
   return (
@@ -48,6 +46,7 @@ export default function index() {
             />
             <BiChevronDown />
           </div>
+          {userClick &&  <ProfileDropDown onClick={onUserClickHandler} /> }
         </div>
       </Navbar>
 
@@ -62,7 +61,7 @@ export default function index() {
         </section>
 
         <section className={classes.miscellaneous}>
-          Miscellaneous
+         Miscellaneous
         </section>
       </section>
 
