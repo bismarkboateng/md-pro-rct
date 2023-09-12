@@ -1,10 +1,11 @@
 import { Profile } from "../../assets"
+import { BsTwitter } from "react-icons/bs"
 
 export default [
     {
         profileImage: Profile,
         Name: "Marie Le Conte",
-        Title: "Limbs",
+        Title: "How 9/11 Taught Me To Stop Saying 'Everything Will Be Okay'",
         id: 0,
     },
     {
@@ -13,4 +14,9 @@ export default [
         Title: "The Magic Art of Saying More with Less",
         id: 1,
     },
+]
+
+
+export const Info = [
+    {text: "Connect to Twitter", id: 0, icon: <BsTwitter />,},
 ]
