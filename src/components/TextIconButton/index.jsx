@@ -26,11 +26,7 @@ export default function index(props) {
       ) : (
         <div className={classes.inputDiv} onClick={onSignInButtonClickHandler}>
           <i style={{ color: props.id === 1 || props.id === 3 ? "rgb(98, 98, 231)" : ""}}>
-            {/* <i  */}
-            <Fragment style={{ color: props.user && "rgb(107, 156, 247)" }}>
               {props.icon}
-            </Fragment>
-            {/* </i> */}
           </i>
           <div>{props.text}</div>
         </div> 

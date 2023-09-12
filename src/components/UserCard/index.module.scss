@@ -1,0 +1,20 @@
+.user__wrapper {
+    border: 1px solid red;
+}
+
+.user__content__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.user__image {
+    width: 200px;
+}
+
+.user__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}

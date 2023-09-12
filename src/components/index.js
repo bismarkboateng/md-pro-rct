@@ -28,3 +28,4 @@ export { default as Search } from "./Search";
 export { default as ProfileDropDown } from "./ProfileDropDown";
 export { default as TrendCard } from "./TrendCard";
 export { default as StaffPicks } from "./StaffPicks";
+export { default as UserCard } from "./UserCard";

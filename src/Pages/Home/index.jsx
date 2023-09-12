@@ -3,7 +3,7 @@ import { Fragment, useState, useEffect, useContext } from "react";
 import styles from "./index.module.scss";
 import { Button, Herosection, Trending, ArticleList, Discover } from "../../components"
 import { Link } from "react-router-dom";
-import Links from "./Links";
+import { navItems, Links } from "./Links"
 import ModalContext from "../../store/modal-context";
 
 
@@ -26,7 +26,7 @@ export default function index() {
     <section>
       { contextValue.isSignInModalOpen && <Modal /> }
       <Navbar bg={{background: ""}} wrap={{ }} iconColor={{}} title="Medium">
-        { Links.map((item) => (
+        { navItems.map((item) => (
            <Fragment key={item.id}>
             { item.name === "Sign in"
             ? (<li className={styles.navItem} onClick={contextValue.onSignInClickHandler}>{item.name}</li>)
@@ -67,7 +67,14 @@ export default function index() {
                     <ArticleList />
                 </div>
                 <div className={styles.discover}>
-                    <Discover />
+                    <Discover title="Discover more of what matters to you">
+                      <div className={styles.line}/>
+                      <ul className={styles.linkItemWrapper}>
+                        { Links.map((link) => (
+                          <li key={link.index} className={styles.linkItem}>{link.title}</li>
+                        ))}
+                      </ul>
+                    </Discover>
                 </div>
               </>
               )
