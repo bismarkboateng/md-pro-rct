@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react"
 import { PiBellRingingThin } from "react-icons/pi"
 import { SlNote } from "react-icons/sl"
-import { BsMedium } from "react-icons/bs"
 import { IoAddSharp } from "react-icons/io5"
 import { BiChevronDown } from "react-icons/bi"
-
 
 import { Navbar, Search } from "../../components"
 import { bg, wrap } from "./styles"
 import classes from "./index.module.scss"
-import { ArticleList, ProfileDropDown, StaffPicks, Discover, UserCard} from "../../components"
+import { ArticleList, ProfileDropDown, StaffPicks, Discover, UserCard } from "../../components"
 
 
 
@@ -65,7 +63,12 @@ export default function index() {
           <div className={classes.discover}>
             <Discover title="Recommended topics" />
           </div>
-          <UserCard />
+
+          <div className={classes.follow}>
+            <h2 className={classes.followText}>Who to follow</h2>
+            <UserCard />
+          </div>
+
         </section>
       </section>
 

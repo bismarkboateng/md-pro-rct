@@ -29,6 +29,8 @@
         
     }
 }
+
+.follow,
 .discover {
     margin-top: 40px;
     margin-left: 13px;
@@ -103,4 +105,11 @@
     margin-top: 30px;
     margin-left: 30px;
     width: 25%;
+}
+
+.follow__text {
+    font-size: 16px;
+    color: #242424;
+    font-family: var(--font-helvetica);
+    margin-bottom: 8px;
 }

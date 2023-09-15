@@ -12,6 +12,9 @@ const style = {
 }
 
 export default function index() {
+  // user details will be queried from local storage
+  const user = true
+
   return (
     <section className={classes.staffs}>
       <h2 className={classes.header}>Staff Picks</h2>
@@ -34,12 +37,11 @@ export default function index() {
         <div className={classes.mediumContent}>Discover Medium writers you<br />already follow on Twitter.</div>
         {Info.map((item) => (
             <TextIconButton
-            id={item.id}
-            key={item.id}
-            icon={item.icon}
-            text={item.text}
-            user={true}
-            // onClick={props.onEmailButtonClick}
+              id={item.id}
+              key={item.id}
+              icon={item.icon}
+              text={item.text}
+              user={user}
             />
         ))}
         <p className={classes.later}>Maybe later</p>

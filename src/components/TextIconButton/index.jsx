@@ -1,16 +1,18 @@
 import classes from "./index.module.scss"
 import signInAccount from "../../utils/signInAccount"
 import { useNavigate } from "react-router-dom"
-import { Fragment } from "react"
+
 
 
 
 export default function index(props) {
   const navigate = useNavigate()
+  
+  const userClasss = classes.user
+  const moveTextClass = classes.moveText
 
   function onSignInButtonClickHandler() {
     if (signInAccount(props.text)) {
-      // console.log()
       navigate("/user-page")
     }
 
@@ -20,15 +22,15 @@ export default function index(props) {
     <>
       {props.text === "Sign up with Email" || props.text === "Sign in with Email" ?  (
         <div className={classes.inputDiv} onClick={props.onClick}>
-          <i style={{ color: props.id === 1 || props.id === 3 ? "rgb(98, 98, 231)" : ""}}>{props.icon}</i>
+          <i>{props.icon}</i>
           <div>{props.text}</div>
         </div> 
       ) : (
         <div className={classes.inputDiv} onClick={onSignInButtonClickHandler}>
-          <i style={{ color: props.id === 1 || props.id === 3 ? "rgb(98, 98, 231)" : ""}}>
-              {props.icon}
+          <i className={`${props.user && userClasss} ${classes.textIcon}` }>
+            {props.icon}
           </i>
-          <div>{props.text}</div>
+          <div className={`${props.user && moveTextClass}`}>{props.text}</div>
         </div> 
       )}
     </>

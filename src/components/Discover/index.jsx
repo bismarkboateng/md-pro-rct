@@ -15,7 +15,6 @@ export default function index(props) {
       </ul>
 
       <div className={styles.seeMore}>See more topics</div>
-
       <>
         {props.children}
       </>

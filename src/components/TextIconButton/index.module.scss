@@ -4,10 +4,9 @@
     border-radius: 20px;
     margin-bottom: 13px;
     text-align: left;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
     display: flex;
+    flex-direction: row;
+    // justify-content: ;
     
     cursor: pointer;
 
@@ -18,4 +17,18 @@
             font-size: 18px;
         }
     }
+}
+
+.input__div:nth-child(2n) {
+    i {
+        color: rgb(98, 98, 231)
+    }
+}
+
+.user {
+    color: rgb(98, 98, 231)
+}
+
+.move__text {
+    margin-right: 30px;
 }
