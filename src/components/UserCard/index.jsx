@@ -33,8 +33,10 @@ export default function index() {
                 >
                     Follow
                 </Button>
+
             </div>
         ))}
+        <div className={classes.seeMore}>See more suggestions</div>
     </section>
   )
 }

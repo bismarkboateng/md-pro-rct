@@ -113,3 +113,26 @@
     font-family: var(--font-helvetica);
     margin-bottom: 8px;
 }
+
+.saved {
+    color: #242424;
+    font-size: 14px;
+    font-family: var(--font-helvetica);
+    margin-left: 13px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    width: max-content;
+    padding: 2px 3px;
+    border-radius: 2px;
+}
+
+.saved:hover {
+    background: rgb(206, 204, 204);
+    color: #615959;
+}
+
+.discover__follow {
+    position: sticky;
+    top: 10%;
+}
