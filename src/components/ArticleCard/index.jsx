@@ -2,22 +2,22 @@ import styles from "./index.module.scss";
 import { MdOutlineBookmarkAdd } from "react-icons/md";
 
 
-export default function index({ article }) {
-  
+export default function index({ article, articleImage, profileImage}) {
+  console.log(article)
   return (
     <div className={styles.articleCardWrapper}>
 
       <div className={styles.articleContent}>
 
         <div className={styles.profileAuthor}>
-          <img src={article.profileImage} alt="author image"
+          <img src={profileImage} alt="author image"
             className={styles.profileImage}
           />
           <span>{article.author}</span>
         </div>
 
         <h1>{article.title}</h1>
-        <div className={styles.subTitle}>{article.subtitle}</div>
+        <div className={styles.subTitle}>{ article.content.slice(0, 100) }</div>
         
         <div className={styles.dateDurationTagBookmarkSvg}>
           <div className={styles.dateDuration}>{article.date} . {article.duration}.</div>
@@ -28,7 +28,7 @@ export default function index({ article }) {
 
       <div className={styles.svgImage}>
         <MdOutlineBookmarkAdd />
-        <img src={article.image} 
+        <img src={articleImage} 
           alt={article.title} 
           className={styles.articleImage}
         />
