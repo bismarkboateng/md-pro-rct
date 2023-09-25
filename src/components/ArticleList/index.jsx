@@ -33,7 +33,7 @@ export default function index() {
 
   }, [])
 
-  if (isLoading) return <Spinner message="Loading articles...." />
+  if (isLoading) return <Spinner message="Loading articles...." spinner={styles.spinner} />
 
 
   return (

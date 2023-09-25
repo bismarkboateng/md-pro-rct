@@ -1,11 +1,10 @@
 import { LineWave } from  'react-loader-spinner'
-import classes from "./index.module.scss"
 
 
 
-export default function index({ message }) {
+export default function index({ message, spinner }) {
   return (
-    <div className={classes.spinner}>
+    <div className={spinner}>
         <LineWave
         height="100"
         width="100"

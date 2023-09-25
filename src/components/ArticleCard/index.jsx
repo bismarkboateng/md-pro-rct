@@ -1,5 +1,6 @@
 import styles from "./index.module.scss";
 import { MdOutlineBookmarkAdd } from "react-icons/md";
+import { Link } from "react-router-dom"; 
 
 
 export default function index({ article, articleImage, profileImage}) {
@@ -16,7 +17,9 @@ export default function index({ article, articleImage, profileImage}) {
           <span>{article.author}</span>
         </div>
 
-        <h1>{article.title}</h1>
+        <Link to={`/read/${article.id}`} style={{ textDecoration: "none"}}>
+          <h1>{article.title}</h1>
+        </Link>
         <div className={styles.subTitle}>{ article.content.slice(0, 100) }</div>
         
         <div className={styles.dateDurationTagBookmarkSvg}>

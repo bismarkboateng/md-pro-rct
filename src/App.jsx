@@ -1,6 +1,6 @@
 // import styles from "./App.module.scss";
 import {Route, Routes } from "react-router-dom";
-import { About, Membership, Write, Signin, Home, UserPage} from "./Pages";
+import { About, Membership, Write, Home, UserPage, Detail} from "./Pages";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <Route path="/Membership" element={<Membership />} />
         <Route path="/write" element={<Write />} />
         <Route path="/user-page" element={<UserPage/>} />
-        {/* <Route path="/Sign In" element={<Signin />} /> */}
+        <Route path="/read/:articleId" element={<Detail />} />
       </Routes>
     </div>
   )
