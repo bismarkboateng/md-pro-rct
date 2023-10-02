@@ -32,6 +32,11 @@
     }
 }
 
+.button__wrapper {
+    display: flex;
+    gap: 20px;
+}
+
 .notification {
     font-size: 30px;
     cursor: pointer;
@@ -50,6 +55,15 @@
 
 .user__image {
     border-radius: 50%;
+}
+
+.sign__in {
+    border: none;
+    outline: none;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    background: white;
 }
 
 .sign__up {

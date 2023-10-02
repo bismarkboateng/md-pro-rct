@@ -56,6 +56,45 @@
     line-height: 20px;
 }
 
+.nav {
+    background: #fff;
+    border-bottom: 1px solid gray;
+    padding: 24px;
+}
+
+.nav__wrapper {
+    // width: 97%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.medium__icon {
+    svg {
+        font-size: 45px;
+        margin-right: 8px;
+        cursor: pointer;
+    }
+}
+
+
+
+
+.nav__icon {
+    display: flex;
+    align-items: center;
+    color: #000;
+
+
+    h1 {
+        font-size: 33px;
+        cursor: pointer;
+    }
+}
+
 
 @media screen and (max-width: 524px) {
     .cta__wrapper {

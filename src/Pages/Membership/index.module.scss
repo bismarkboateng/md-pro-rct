@@ -1,7 +1,65 @@
 .nav__item {
     font-size: 15px;
     list-style-type: none;
+    color: #fff;
     cursor: pointer;
+}
+
+.nav {
+    position: sticky;
+    top: 0;
+    right: 0;
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid rgba(25, 25, 25, 1);
+    // height: 8vh;
+    height: 80px;
+    background: rgb(68, 121, 255);
+    border-bottom: 1px solid #fff;
+
+
+    // use javaScript to change the background
+    // background: rgb(241, 182, 52);  
+}
+
+.nav__icon {
+    display: flex;
+    align-items: center;
+    color: #fff;
+
+    h1 {
+        font-size: 33px;
+        cursor: pointer;
+    }
+}
+
+.medium__icon {
+    svg {
+        font-size: 45px;
+        margin-right: 8px;
+        cursor: pointer;
+    }
+}
+
+.nav__list__items {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    gap: 25px;
+
+}
+
+
+
+.nav__wrapper {
+    width: 97%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    // justify-content: space-between;
+    align-items: center;
+
 }
 
 .access {

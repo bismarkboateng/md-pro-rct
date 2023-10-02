@@ -1,27 +1,59 @@
-import { Navbar, Button, CTA, WriteHero, ClickBait, Eligibility, FAQ, FaqDrop, MemFooter } from "../../components";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { BsMedium } from "react-icons/bs";
+
+import { 
+  Navbar, Button, CTA, WriteHero, ClickBait, 
+  Modal, Eligibility, FAQ, FaqDrop, MemFooter 
+} from "../../components";
+import { cta } from "./Style";
 import styles from "./index.module.scss";
-import {style, cta, iconColor, wrap } from "./Style";
 import Text from "./Text";
+import ModalContext from "../../store/modal-context";
+
+
+
 
 export default function index() {
+  const contextValue = useContext(ModalContext)
+
+
+  const handleClickAction = contextValue.onSignInClickHandler
+  
   return (
     <section>
-      <Navbar bg={style} wrap={wrap} iconColor={iconColor} title="Medium">
+      { contextValue.isSignInModalOpen && <Modal /> }
 
-        <Button
-          text="Sign in"
-          className={styles.signIn}
-          onClick={() => {console.log("Sign in clicked")}}
-        >
-          <button
-            className={styles.signUp}
-            onClick={() => {console.log("Sign up Click")}}
+      <Navbar nav={styles.nav}>
+        <section className={styles.navWrapper}>
+
+          <Link to="/" style={{ textDecoration: "none"}}>
+            <div className={styles.navIcon}>
+              <i className={styles.mediumIcon}><BsMedium /></i>
+              <h1>Medium</h1>
+            </div>
+          </Link>
+
+
+          <Button
+            className={styles.signIn}
+            text="Sign in"
+            onClick={handleClickAction}
           >
+
+            <button
+              className={styles.signUp}
+              onClick={handleClickAction}
+            >
               Sign Up
-          </button>
-        </Button>
+            </button>
+
+          </Button>
+
+        </section>
 
       </Navbar>
+
       <WriteHero />
       <ClickBait />
       <Eligibility />

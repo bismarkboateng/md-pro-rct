@@ -67,6 +67,45 @@
     margin-left: 35px;
 }
 
+.nav {
+    background: #242424;
+    border-bottom: 1px solid gray;
+    padding: 24px;
+}
+
+.nav__wrapper {
+    // width: 97%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.medium__icon {
+    svg {
+        font-size: 45px;
+        margin-right: 8px;
+        cursor: pointer;
+    }
+}
+
+
+
+
+.nav__icon {
+    display: flex;
+    align-items: center;
+    color: #fff;
+
+
+    h1 {
+        font-size: 33px;
+        cursor: pointer;
+    }
+}
+
 .cta__wrapper {
     border-top: 1px solid #F2F2F2;
     padding: 56px 32px 64px;
