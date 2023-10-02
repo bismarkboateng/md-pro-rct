@@ -1,0 +1,12 @@
+.nav__item {
+    font-size: 15px;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.nav__list__items {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    gap: 25px;
+}

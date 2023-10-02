@@ -1,10 +1,3 @@
-export const navItems = [
-    {name: "Our story", id: Math.random()},
-    {name: "Membership", id: Math.random()},
-    {name: "Write", id: Math.random()},
-    {name: "Sign in", id: Math.random()},
-]
-
 export const Links = [
     {title: "Help", index: 0},
     {title: "Status", index: 1},

@@ -1,17 +1,18 @@
-import styles from "./index.module.scss";
-import { Navbar, Button, CTA, Modal } from "../../components";
-import { style, wrap, iconColor, cta } from "./styles";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { content } from "./Data";
 import { BsMedium } from "react-icons/bs";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+
+
+import { Navbar, Button, CTA, Modal } from "../../components";
+import { cta } from "./styles";
+import { content } from "./Data";
 import ModalContext from "../../store/modal-context";
+import styles from "./index.module.scss";
 
 
 
 export default function index() {
   const contextValue = useContext(ModalContext)
-
 
   const handleClickAction =contextValue.onSignInClickHandler
 
