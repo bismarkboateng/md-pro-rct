@@ -39,9 +39,11 @@ export default function index() {
            </Fragment>
         ))}
 
-        <Button className={styles.getStarted}
+        <Button
+          className={styles.getStarted}
           onClick={contextValue.onSignInClickHandler}
-        >Get started</Button>
+          text="Get started"
+        />
       </Navbar>
       
       <Herosection />
@@ -49,7 +51,8 @@ export default function index() {
       <div className={styles.articleDiscoverWrapper}>
         <div className={styles.articleDiscover}>
             {
-              innerWidth <= (330 || 480 || 767) ?
+              ((innerWidth <= 330) || (innerWidth <= 480) || (innerWidth <= 767))
+              ?
               (
               <>
                 <div className={styles.discover}>

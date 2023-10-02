@@ -7,6 +7,9 @@ import { bg, wrap, iconColor } from "./Style";
 
 
 export default function index() {
+
+  const text = window.innerWidth <= 588 ? "Get started" : "Get unlimited access"
+  
   return (
    <main>
     <Navbar bg={bg} iconColor={iconColor} wrap={wrap} title="Medium">
@@ -15,9 +18,12 @@ export default function index() {
           <li className={styles.navItem} key={item.id}>{item.name}</li>
         </Link>
       ))}
-      <Button className={styles.access}>
-        { window.innerWidth <= 558 ? "Get started" : "Get unlimited access"}
-      </Button>
+
+      <Button
+        text={text}
+        className={styles.access}
+      /> 
+
     </Navbar>
     <MemHero />
     <Access />

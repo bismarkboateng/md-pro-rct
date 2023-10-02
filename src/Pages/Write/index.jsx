@@ -1,4 +1,4 @@
-import { Navbar, Buttons, CTA, WriteHero, ClickBait, Eligibility, FAQ, FaqDrop, MemFooter } from "../../components";
+import { Navbar, Button, CTA, WriteHero, ClickBait, Eligibility, FAQ, FaqDrop, MemFooter } from "../../components";
 import styles from "./index.module.scss";
 import {style, cta, iconColor, wrap } from "./Style";
 import Text from "./Text";
@@ -7,10 +7,20 @@ export default function index() {
   return (
     <section>
       <Navbar bg={style} wrap={wrap} iconColor={iconColor} title="Medium">
-        <Buttons 
-          signInClassName={styles.signIn}
-          signUpClassName={styles.signUp}
-        />
+
+        <Button
+          text="Sign in"
+          className={styles.signIn}
+          onClick={() => {console.log("Sign in clicked")}}
+        >
+          <button
+            className={styles.signUp}
+            onClick={() => {console.log("Sign up Click")}}
+          >
+              Sign Up
+          </button>
+        </Button>
+
       </Navbar>
       <WriteHero />
       <ClickBait />

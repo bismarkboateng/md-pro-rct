@@ -1,9 +1,15 @@
 export default function index(props) {
   return (
-    <button className={props.className}
-      onClick={props.onClick}
-    >
-        { props.children }
-    </button>
+    <div className={props.buttonWrapper}>
+
+      <button
+        className={props.className}
+        onClick={props.onClick}
+      >
+        {props.text}
+      </button>
+
+      {props.children}
+    </div>
   )
 }

@@ -18,9 +18,8 @@ export default function index() {
         </div>
         <Button className={styles.heroButton}
           onClick={contextValue.onSignInClickHandler}
-        >
-          Start reading
-        </Button>
+          text="Start reading"
+        />
       </div>
 
       <div className={styles.animation}>
