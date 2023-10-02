@@ -9,5 +9,6 @@ export const wrap = {
     justifyContent: "flex-start",
     padding: "0",
     width: "98%",
-    margin: "auto",    
+    border: "1px solid red",
+    margin: "auto", 
 }

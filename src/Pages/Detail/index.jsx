@@ -49,7 +49,22 @@ export default function index() {
 
         <div className={classes.userActions}>
           <i><SlNote /> Write</i>
-          <Button className={classes.signUp}>Sign up</Button>
+          
+          <Button
+            text="Sign up"
+            className={classes.signUp}
+            onClick={() => {console.log("Sign up")}}
+            buttonWrapper={classes.buttonWrapper}
+          >
+            <button
+              onClick={() => {console.log("Sign in")}}
+              className={classes.signIn}
+            
+            >
+              Sign in
+            </button>
+          </Button>
+
           <div className={classes.user} onClick={() => {}}>
             <img
               src="https://miro.medium.com/v2/resize:fill:32:32/0*mvgflI3mBCEBHxPU"
@@ -57,7 +72,6 @@ export default function index() {
             />
             <BiChevronDown />
           </div>
-          {/* {userClick &&  <ProfileDropDown onClick={() => {}} /> } */}
         </div>
       </Navbar>
 

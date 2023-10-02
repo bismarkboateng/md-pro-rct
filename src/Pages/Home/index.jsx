@@ -5,6 +5,7 @@ import { Button, Herosection, Trending, ArticleList, Discover } from "../../comp
 import { Link } from "react-router-dom";
 import { navItems, Links } from "./Links"
 import ModalContext from "../../store/modal-context";
+import { BsMedium } from "react-icons/bs";
 
 
 
@@ -22,28 +23,64 @@ export default function index() {
   }, [innerWidth])
 
 
+  const handleClickAction =contextValue.onSignInClickHandler
+
+
   return (
     <section>
       { contextValue.isSignInModalOpen && <Modal /> }
-      <Navbar bg={{background: ""}} wrap={{ }} iconColor={{}} title="Medium">
-        { navItems.map((item) => (
-           <Fragment key={item.id}>
-            { item.name === "Sign in"
-            ? (<li className={styles.navItem} onClick={contextValue.onSignInClickHandler}>{item.name}</li>)
-            : (
-              <Link to={item.name} style={{ textDecoration: "none", color: "black"}}>
-                <li className={styles.navItem} >{item.name}</li>
-              </Link>
-              )
-            }
-           </Fragment>
-        ))}
+ 
+      <Navbar nav={styles.nav}>
+        <section  className={styles.navWrapper}>
+          <div className={styles.navIcon}>
+            <i className={styles.mediumIcon}><BsMedium /></i>
+            <h1>Medium</h1>
+          </div>
 
-        <Button
-          className={styles.getStarted}
-          onClick={contextValue.onSignInClickHandler}
-          text="Get started"
-        />
+          <ul className={styles.navListItems}>
+            <Link to="/our-story" style={{ textDecoration: "none", color: "black"}}>
+              <li
+                className={styles.navItem}
+              >
+                Our story
+              </li>
+            </Link>
+            
+
+            <Link to="/membership" style={{ textDecoration: "none", color: "black"}}>
+              <li
+                className={styles.navItem}
+              >
+                Membership
+              </li>
+            </Link>
+            
+
+            <Link to="write" style={{ textDecoration: "none", color: "black"}}>
+              <li
+                className={styles.navItem}
+              >
+                Write
+              </li>
+            </Link>
+            
+
+            <li
+              className={styles.navItem} 
+              onClick={handleClickAction}
+            >
+              Sign in
+            </li>
+          
+          </ul>
+
+          <Button
+            className={styles.getStarted}
+            onClick={contextValue.onSignInClickHandler}
+            text="Get started"
+          />
+
+        </section>
       </Navbar>
       
       <Herosection />
