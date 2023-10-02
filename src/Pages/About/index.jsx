@@ -1,5 +1,5 @@
 import styles from "./index.module.scss";
-import { Navbar, Buttons, CTA } from "../../components";
+import { Navbar, Button, CTA } from "../../components";
 import { style, wrap, iconColor, cta } from "./styles";
 import { Link } from "react-router-dom";
 import { content } from "./Data";
@@ -11,10 +11,20 @@ export default function index() {
   return (
     <section className={styles.about}>
       <Navbar bg={style} wrap={wrap} iconColor={iconColor} title="Medium">
-        <Buttons 
-          signInClassName={styles.signIn}
-          signUpClassName={styles.signUp}
-        />
+        <Button
+          className={styles.signIn}
+          text="Sign in"
+          onClick={() => {console.log("Sign in clicked")}}
+        >
+
+          <button
+            className={styles.signUp}
+            onClick={() => {console.log("Sign up")}}
+          >
+            Sign Up
+          </button>
+
+        </Button>
       </Navbar>
 
       <h1 className={styles.title}>

@@ -18,7 +18,11 @@ export default function index() {
             expression, knowledge-sharing, and<br />
             storytelling.
         </p>
-        <Button className={styles.apply}>Apply now</Button>
+        <Button 
+          text="Apply now"
+          className={styles.apply}
+          onClick={() => {console.log("Apply now")}}
+        />
     </section>
   )
 }

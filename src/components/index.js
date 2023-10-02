@@ -4,7 +4,6 @@ export { default as Herosection } from "./Herosection";
 export { default as Navbar } from "./Navbar";
 export { default as Trending } from "./Trending";
 export { default as Button } from "./Button";
-export { default as Buttons } from "./Buttons";
 export { default as ArticleCard } from "./ArticleCard";
 export { default as CTA } from "./CTA";
 export { default as MemHero } from "./MemHero";

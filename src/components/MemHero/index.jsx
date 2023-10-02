@@ -10,7 +10,10 @@ export default function index() {
             Become a Medium member to enjoy unlimited access and<br />
             directly support the writers you read most.
         </div>
-        <Button className={styles.access}>Get unlimited access</Button>
+        <Button
+          text="Get unlimited access"
+          className={styles.access}
+        />
     </section>
   )
 }
