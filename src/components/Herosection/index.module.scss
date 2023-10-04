@@ -43,10 +43,39 @@
     cursor: pointer;
 }
 
-// .animation {
-//     margin-top: 100px;
-// }
+.animation {
+    margin-top: 40px;
+    width: 35%;
+}
 
+
+.firstM {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    // transform: rotate(30deg);
+}
+
+.secondM {
+    display: flex;
+    margin-bottom: 15px;
+    // margin-bottom: 40px;
+    // transform: rotate(-30deg);
+}
+
+.thirdM {
+    display: flex;
+    margin-bottom: 15px;
+    // transform: rotate(-60deg);
+}
+
+.fourthM {
+    display: flex;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    // transform: rotate(-60deg);
+}
 
 @media screen and (max-width: 1200px) {
     .hero__wrapper {
