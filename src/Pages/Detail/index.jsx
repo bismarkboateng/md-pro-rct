@@ -1,14 +1,14 @@
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import { doc, getDoc } from "firebase/firestore" 
 import { useEffect, useState } from "react"
 
 import { db } from "../../utils/firebaseConfig"
-import { Spinner, Button, Navbar,Search, ProfileDropDown } from "../../components"
-import classes from "./index.module.scss"
-import { bg, wrap } from "./styles"
+import { Spinner, Button, Navbar,Search, ProfileDropDown, ArticleDetailContent } from "../../components"
 import { SlNote } from "react-icons/sl"
 import { BiChevronDown } from "react-icons/bi"
+import { BsMedium } from "react-icons/bs"
 
+import classes from "./index.module.scss"
 
 
 
@@ -40,10 +40,17 @@ export default function index() {
 
   if (isLoading) return <Spinner message="Loading article..." spinner={classes.spinner} />
 
+  console.log(article)
+
   return (
     <section>
-      <Navbar bg={bg} wrap={wrap} iconColor={{}}>
+      <Navbar
+        nav={classes.nav}
+      >
         <div className={classes.searchField}>
+          <Link to="/" style={{ textDecoration: "none", color: "black"}}>
+            <BsMedium  fontSize={45}/>
+          </Link>
           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </div>
 
@@ -76,7 +83,9 @@ export default function index() {
       </Navbar>
 
       <div className={classes.detailWrapper}>
-        <h1 className={classes.articleTitle}>{article.title}</h1>
+        <ArticleDetailContent
+          article={article}
+        />
       </div>
     </section>
   )

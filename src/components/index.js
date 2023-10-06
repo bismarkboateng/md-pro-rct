@@ -31,3 +31,4 @@ export { default as UserCard } from "./UserCard";
 export { default as Spinner } from "./Spinner";
 export { default as Navlinks } from "./Navlinks";
 export { default as Box } from "./Box";
+export { default as ArticleDetailContent } from "./ArticleDetailContent";

@@ -5,7 +5,22 @@
 }
 
 .search__field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     margin-right: auto;
+
+    svg {
+        margin-right: 18px;
+    }
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 15px 10px 20px;
+    border-bottom: 1px solid rgb(242, 242, 242);
 }
 
 .user__actions {
@@ -15,7 +30,7 @@
     gap: 45px;
     font-size: 19px;
     color: #6B6B6B;
-    margin-left: 253%;
+    // margin-left: 253%;
 
     i {
         display: flex;
@@ -34,7 +49,7 @@
 
 .button__wrapper {
     display: flex;
-    gap: 20px;
+    gap: 10px;
 }
 
 .notification {
@@ -82,11 +97,4 @@
     width: 38%;
     margin: auto;
     margin-top: 4%;
-    height: 30%;
-}
-
-.article__title {
-    font-size: 42px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #242424;
 }

@@ -38,8 +38,6 @@ export default function index({ article, articleImage, profileImage}) {
         <Link to={`/read/${article.id}`} style={{ textDecoration: "none"}}>
           <h1>{article.title}</h1>
         </Link>
-        {/* <div className={styles.subTitle}>{ innerWidth <= 400 ?  article.content.slice(0, 100) }</div> */}
-
         <div className={styles.subTitle}>{content}</div>
         
         <div className={styles.bookmarkDates}>
@@ -48,7 +46,7 @@ export default function index({ article, articleImage, profileImage}) {
             <div className={styles.tag}>{article.tag}</div>
           </div>
 
-          <MdOutlineBookmarkAdd />
+          <MdOutlineBookmarkAdd cursor={"pointer"} />
         </div>
 
       </div>

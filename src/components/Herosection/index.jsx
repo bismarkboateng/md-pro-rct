@@ -26,7 +26,6 @@ export default function index() {
         
         setTimeout(() => {
           elRef.current.style.opacity = "1"
-          console.log("setting black")
         }, 1300)
       })
   
@@ -36,7 +35,6 @@ export default function index() {
 
     setInterval(() => {
       changeColor()
-      console.log("still running")
     }, 3000)
     
   })

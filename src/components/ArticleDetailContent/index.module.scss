@@ -1,0 +1,33 @@
+.article__title {
+    font-size: 42px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #242424;
+}
+
+.meta__data {
+    color: #6B6B6B;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+}
+
+.article__content {
+    font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+    color: #242424;
+    font-weight: 400;
+    word-break: break-word;
+    line-height: 32px;
+    letter-spacing: -0.003em;
+    font-size: 20px;
+    padding-bottom: 30px;
+
+    p {
+        margin-bottom: 20px;
+    }
+}
+
+
+.article__image {
+    margin-top: 250px;
+    margin-bottom: 25px;
+}

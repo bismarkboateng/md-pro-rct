@@ -17,7 +17,8 @@
     "react-loader-spinner": "^5.4.5",
     "react-router-dom": "^6.15.0",
     "react-simple-typewriter": "^5.0.1",
-    "sass": "^1.65.1"
+    "sass": "^1.65.1",
+    "vite-plugin-fonts": "^0.7.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
