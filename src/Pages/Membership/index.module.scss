@@ -12,14 +12,17 @@
     display: flex;
     width: 100%;
     border-bottom: 1px solid rgba(25, 25, 25, 1);
-    // height: 8vh;
     height: 80px;
     background: rgb(68, 121, 255);
     border-bottom: 1px solid #fff;
+}
 
 
-    // use javaScript to change the background
-    // background: rgb(241, 182, 52);  
+.background {
+    background: white;
+    transition: all 0.5s ease;
+    border-bottom: 1px solid rgba(25, 25, 25, 1);
+
 }
 
 .nav__icon {

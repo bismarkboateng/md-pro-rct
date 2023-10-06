@@ -11,14 +11,40 @@ import ModalContext from "../../store/modal-context";
 
 export default function index() {
   const [innerWidth, setInnerWidth] = useState(window.innerWidth)
+  const [scrolling, setScrolling] = useState(false)
   const contextValue = useContext(ModalContext)
 
 
   useEffect(() => {
-    window.addEventListener("resize", () => {
+
+    const onSetInnerWidthHandler = () => {
       setInnerWidth(window.innerWidth)
-    })
+    }
+
+    window.addEventListener("resize", onSetInnerWidthHandler)
+
+    return () => {
+      window.removeEventListener("resize", onSetInnerWidthHandler)
+    }
   }, [innerWidth])
+
+
+  useEffect(() => {
+
+    const handleScroll = () => {
+      if (window.scrollY > 450) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleClickAction =contextValue.onSignInClickHandler
 
@@ -27,7 +53,11 @@ export default function index() {
     <section>
       { contextValue.isSignInModalOpen && <Modal /> }
  
-      <Navbar nav={styles.nav}>
+      <Navbar 
+        scrolling={scrolling} 
+        nav={styles.nav}
+        background={styles.background}
+      >
         <section  className={styles.navWrapper}>
           <div className={styles.navIcon}>
             <i className={styles.mediumIcon}><BsMedium /></i>
@@ -36,6 +66,8 @@ export default function index() {
           <Navlinks handleClickAction={handleClickAction} />
           <Button
             className={styles.getStarted}
+            btnBackground={styles.btnBackground}
+            scrolling={scrolling}
             onClick={contextValue.onSignInClickHandler}
             text="Get started"
           />

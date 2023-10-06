@@ -17,10 +17,7 @@ export default function index() {
   ]
 
 
-
-
   function changeColor() {
-
       spanRefs.forEach((elRef) => {
         elRef.current.style.opacity = "0"
         
@@ -66,8 +63,8 @@ export default function index() {
       <div className={styles.animation}>
 
       <div className={styles.firstM}>
-        {[1, 2, 3].map(() => (
-          <Box>
+        {[1, 2, 3].map((index) => (
+          <Box key={index}>
             <span style={{ marginRight: "10px"}} ref={spanRefs[0]}>M</span>
             <span>M</span>
             <span ref={spanRefs[1]}>M</span>
@@ -81,8 +78,8 @@ export default function index() {
       </div>
 
       <div className={styles.secondM}>
-        {[1, 2, 3].map(() => (
-          <Box>
+        {[1, 2, 3].map((index) => (
+          <Box key={index}>
             <span style={{ marginRight: "10px"}} ref={spanRefs[0]}>M</span>
             <span>M</span>
             <span ref={spanRefs[1]}>M</span>
@@ -93,8 +90,8 @@ export default function index() {
       </div>
 
       <div className={styles.thirdM}>
-        {[1, 2, 3].map(() => (
-          <Box>
+        {[1, 2, 3].map((index) => (
+          <Box key={index}>
             <span ref={spanRefs[0]}>M</span>
             <span style={{ marginRight: "10px" }}>M</span>
             <span style={{ marginRight: "10px"}} ref={spanRefs[1]}>M</span>
@@ -107,8 +104,8 @@ export default function index() {
   
 
       <div className={styles.fourthM}>
-        {[1, 2].map(() => (
-          <Box>
+        {[1, 2].map((index) => (
+          <Box key={index}>
             <span ref={spanRefs[0]}>M</span>
             <span style={{ marginRight: "10px" }}>M</span>
             <span>M</span>
@@ -120,8 +117,8 @@ export default function index() {
 
 
       <div className={styles.fourthM}>
-        {[1, 2, 3].map(() => (
-          <Box>
+        {[1, 2, 3].map((index) => (
+          <Box key={index}>
              <span style={{ marginRight: "10px"}} ref={spanRefs[0]}>M</span>
             <span>M</span>
             <span ref={spanRefs[1]}>M</span>

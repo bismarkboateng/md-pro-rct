@@ -3,7 +3,7 @@ export default function index(props) {
     <div className={props.buttonWrapper}>
 
       <button
-        className={props.className}
+        className={`${props.className} ${props.scrolling ? props.btnBackground : ""}`}
         onClick={props.onClick}
       >
         {props.text}

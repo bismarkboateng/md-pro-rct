@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 
 import { 
@@ -14,26 +14,55 @@ import ModalContext from "../../store/modal-context";
 
 
 export default function index() {
+  const [scrolling, setScrolling] = useState(false)
   const contextValue = useContext(ModalContext)
-
-
-  const text = window.innerWidth <= 588 ? "Get started" : "Get unlimited access"
   const handleClickAction =contextValue.onSignInClickHandler
   const linkColor = "#fff"
+
+  useEffect(() => {
+
+    const onHandleScroll = () => {
+      if (window.scrollY > 450) {
+        setScrolling(true)
+      } else {
+        setScrolling(false)
+      }
+    }
+
+
+    window.addEventListener("scroll", onHandleScroll)
+
+    return () => {
+      window.removeEventListener("scroll", onHandleScroll)
+    }
+
+  }, [])
+
+  const text = window.innerWidth <= 588 ? "Get started" : "Get unlimited access"
 
   return (
    <main>
     { contextValue.isSignInModalOpen && <Modal /> }
 
-    <Navbar nav={styles.nav}>
+    <Navbar 
+      scrolling={scrolling}
+      nav={styles.nav}
+      background={styles.background}
+    >
       <section  className={styles.navWrapper}>
         <Link  to="/" style={{ textDecoration: "none", marginRight: "auto"}}>
           <div className={styles.navIcon}>
-            <i className={styles.mediumIcon}><BsMedium /></i>
-            <h1>Medium</h1>
+            <i className={styles.mediumIcon}>
+              <BsMedium color={`${scrolling ? "black" : ""}`}/>
+            </i>
+            <h1 style={{ color: scrolling ? "black" : ""}}>Medium</h1>
           </div>
         </Link>
-        <Navlinks handleClickAction={handleClickAction} linkColor={linkColor} />
+        <Navlinks 
+          scrolling={scrolling}
+          handleClickAction={handleClickAction} 
+          linkColor={linkColor} 
+        />
         <Button
           className={styles.access}
           onClick={contextValue.onSignInClickHandler}

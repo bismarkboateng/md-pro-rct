@@ -20,6 +20,7 @@ export default function index() {
               <TrendCard
                 item={item}
                 value="0"
+                key={item.index}
               />
             ))
           }

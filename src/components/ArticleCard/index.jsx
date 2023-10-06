@@ -9,19 +9,20 @@ export default function index({ article, articleImage, profileImage}) {
 
 
   useEffect(() => {
-
-    window.addEventListener("resize", () => {
+    const onResizeHandler = () => {
       setInnerWidth(window.innerWidth)
-    })
+    }
+
+    window.addEventListener("resize", onResizeHandler)
+
+    return () => {
+      window.removeEventListener("resize", onResizeHandler)
+    }
 
   }, [innerWidth])
 
 
   const content = innerWidth <= 500 ? article.content.slice(0, 30) : article.content.slice(0, 100)
-
-
-
-  console.log("resize rendering..")
 
   return (
     <div className={styles.articleCardWrapper}>
