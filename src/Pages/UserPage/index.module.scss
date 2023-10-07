@@ -2,6 +2,19 @@
     padding: 0;
 }
 
+
+.user__nav {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #F2F2F2;
+}
+
+.medium__search {
+    display: flex;
+    align-items: center;
+}
+
 .search__field {
     margin-right: auto;
 }
@@ -13,7 +26,7 @@
     gap: 45px;
     font-size: 19px;
     color: #6B6B6B;
-    margin-left: 253%;
+    // margin-left: 253%;
 
     i {
         display: flex;
@@ -25,6 +38,11 @@
         
         svg {
             font-size: 20px;
+        }
+
+        &:hover {
+            color: #000;
+            transition: all 0.3s ease;
         }
         
     }
@@ -39,6 +57,11 @@
 .notification {
     font-size: 30px;
     cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: #000;
+    }
 }
 
 .user {
@@ -70,6 +93,7 @@
 }
 
 .actions {
+    width: 88%;
     display: flex;
     flex-direction: row;
     gap: 40px;
@@ -77,14 +101,15 @@
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 30px;
-    // border: 1px solid red;
     padding-top: 15px;
     padding-bottom: 5px;
     margin-bottom: 40px;
     position: sticky;
-    top: 80px;
+    top: 0;
     left: 200px;
     background: #fff;
+    border-bottom: 1px solid #F2F2F2;
+
 
     li {
         list-style-type: none;

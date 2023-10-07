@@ -3,11 +3,12 @@ import { PiBellRingingThin } from "react-icons/pi"
 import { SlNote } from "react-icons/sl"
 import { IoAddSharp } from "react-icons/io5"
 import { BiChevronDown } from "react-icons/bi"
+import { Link } from "react-router-dom"
 
 import { Navbar, Search } from "../../components"
-import { bg, wrap } from "./styles"
 import classes from "./index.module.scss"
 import { ArticleList, ProfileDropDown, StaffPicks, Discover, UserCard } from "../../components"
+import { BsMedium } from "react-icons/bs"
 
 
 
@@ -29,13 +30,21 @@ export default function index() {
   
   return (
     <section className={classes.userPage}>
-      <Navbar bg={bg} wrap={wrap} iconColor={{}}>
-        <div className={classes.searchField}>
-          <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <Navbar
+        nav={classes.userNav}
+      >
+
+        <div className={classes.mediumSearch}>
+          <BsMedium fontSize={45} style={{ marginRight: "20px"}} />
+          <div className={classes.searchField}>
+            <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+          </div>
         </div>
 
         <div className={classes.userActions}>
-          <i><SlNote /> Write</i>
+          <Link to="/new-story" style={{ textDecoration: "none", color: "gray"}}>
+           <i><SlNote /> Write</i>
+          </Link>
           <PiBellRingingThin className={classes.notification}/>
           <div className={classes.user} onClick={onUserClickHandler}>
             <img
