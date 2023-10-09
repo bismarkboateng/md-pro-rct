@@ -1,14 +1,15 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore"
 
+const env = import.meta.env
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBHbj1cssfX0P6sjUaWp1-rQtdJd9X24Zg",
+  apiKey: env.VITE_REACT_APP_FIREBASE_API_KEY,
   authDomain: "medium-project-2f385.firebaseapp.com",
-  projectId: "medium-project-2f385",
+  projectId: env.VITE_REACT_APP_FIREBASE_PROJECT_ID,
   storageBucket: "medium-project-2f385.appspot.com",
-  messagingSenderId: "289690746946",
-  appId: "1:289690746946:web:65002fc07dad8c84b46ddb"
+  messagingSenderId: env.VITE_REACT_APP_MESSAGING_SENDER_ID,
+  appId: env.VITE_REACT_APP_FIREBASE_APPID,
 };
 
 
@@ -18,8 +19,7 @@ export const db = getFirestore()
 
 
 export const actionCodeSettings = {
-  // URL you want to redirect back to. The domain (www.example.com) for this
-  // URL must be in the authorized domains list in the Firebase Console.
+
   url: "localhost",
   // This must be true.
   handleCodeInApp: true,

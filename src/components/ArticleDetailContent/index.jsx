@@ -3,12 +3,16 @@ import { articleImage } from "../../assets"
 
 export default function index({ article }) {
  
-  const paragraph = String(article.content)
-
+  const createMarkup = (text) => {
+    return {__html: text }
+  }
 
   return (
     <article>
-        <h1 className={classes.articleTitle}>{article.title}</h1>
+        <h1 
+          dangerouslySetInnerHTML={createMarkup(article.title)} 
+          className={classes.articleTitle}
+        />
         <p className={classes.metaData}>{ article.duration } . { article.date}</p>
    
         <img 
@@ -16,14 +20,10 @@ export default function index({ article }) {
             alt="article" 
             className={classes.articleImage}
          />
-
-        <section className={classes.articleContent}>
-           <p>{ paragraph.slice(0, 288) }</p>
-           <p>{paragraph.slice(288, 637)}</p>
-           <p>{paragraph.slice(637, 990)}</p>
-           <p>{paragraph.slice(900, 1200)}</p>
-           <p>{paragraph.slice(1200)}</p>
-        </section>
+        <section 
+          dangerouslySetInnerHTML={createMarkup(article.content)} 
+          className={classes.articleContent} 
+        />
     </article>
   )
 }

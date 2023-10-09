@@ -24,6 +24,10 @@ export default function index({ article, articleImage, profileImage}) {
 
   const content = innerWidth <= 500 ? article.content.slice(0, 30) : article.content.slice(0, 100)
 
+  const createMarkup = (text) => {
+    return {__html: text }
+  }
+
   return (
     <div className={styles.articleCardWrapper}>
 
@@ -37,9 +41,9 @@ export default function index({ article, articleImage, profileImage}) {
         </div>
 
         <Link to={`/read/${article.id}`} style={{ textDecoration: "none"}}>
-          <h1>{article.title}</h1>
+          <h1 dangerouslySetInnerHTML={createMarkup(article.title)} />
         </Link>
-        <div className={styles.subTitle}>{content}</div>
+        <div dangerouslySetInnerHTML={createMarkup(content)} className={styles.subTitle} />
         
         <div className={styles.bookmarkDates}>
           <div className={styles.dateDurationTagBookmarkSvg}>
