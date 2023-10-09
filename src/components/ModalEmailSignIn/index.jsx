@@ -3,7 +3,6 @@ import { GoChevronLeft } from "react-icons/go"
 import { Input } from ".."
 import { useState } from "react"
 import { Button } from ".."
-import { emailSignIn } from "../../utils/signInMethods"
 
 
 
@@ -13,15 +12,17 @@ export default function index(props) {
   function onInputFieldChange(event) {
     setEmail(event.target.value)
   }
-  
+
   function onClickEmailButton() {
-    emailSignIn(email)
+    console.log("sign in email button clicked")
   }
 
   return (
     <section className={classes.modalEmail}>
         <h1>Sign in with email</h1>
-        <p className={classes.text}>Enter the email address associated with your account, and we'll send a magic link to your inbox.</p>
+        <p className={classes.text}>
+          Enter the email address associated with your account, and we'll send a magic link to your inbox.
+        </p>
 
         <Input
           title="Your email"
@@ -36,9 +37,8 @@ export default function index(props) {
         <Button
           className={classes.emailButton}
           onClick={onClickEmailButton}
-        >
-          Continue
-        </Button>
+          text="Continue"
+        />
         
         <div className={classes.all} onClick={props.onClickSignIn}>
             <i><GoChevronLeft /></i>

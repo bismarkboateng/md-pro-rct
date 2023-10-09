@@ -1,7 +1,7 @@
 import { BsMedium } from "react-icons/bs"
 import { CiBellOn } from "react-icons/ci"
 import { Link } from "react-router-dom"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import ReactQuill from "react-quill"
 import { collection, addDoc } from "firebase/firestore"
 import { useNavigate } from "react-router-dom"
@@ -18,7 +18,16 @@ import { countWords, calculateReadingDuration} from "../../utils/textComputation
 
 export default function index() {
   const [article, setArticle] = useState("")
+  const [user, setUser] = useState({})
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"))
+    if (!user) {
+      navigate("/")
+    }
+    setUser(user)
+  }, [])
 
 
   function onPublishClickHandler() {
@@ -30,11 +39,9 @@ export default function index() {
     const numOfWords = countWords(article)
     const durationInMinutes = calculateReadingDuration(numOfWords, 200)
 
-    console.log(content)
-
 
     addDoc(docRef, {
-      author: "Bismark",
+      author: user.displayName,
       content: content,
       duration: `${durationInMinutes} min read`,
       date: date,
@@ -75,7 +82,7 @@ export default function index() {
           <p>...</p>
           <CiBellOn fontSize={26} style={{ cursor: "pointer"}}/>
           <img
-            src="https://miro.medium.com/v2/resize:fill:32:32/0*mvgflI3mBCEBHxPU"
+            src={user.photoURL}
             className={classes.userImage}
           />
         </div>

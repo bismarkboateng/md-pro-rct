@@ -35,9 +35,8 @@ export default function index(props) {
         <Button
           className={classes.emailButton}
           onClick={onClickEmailButton}
-        >
-          Continue
-        </Button>
+          text="Continue"
+        />
         
         <div className={classes.all} onClick={props.onSignUpClick}>
             <i><GoChevronLeft /></i>

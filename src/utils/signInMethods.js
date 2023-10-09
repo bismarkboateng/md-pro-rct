@@ -1,4 +1,8 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, sendSignInLinkToEmail} from "firebase/auth"
+import { 
+    getAuth, signInWithPopup, 
+    GoogleAuthProvider, FacebookAuthProvider, 
+    sendSignInLinkToEmail
+  } from "firebase/auth"
 import { app, actionCodeSettings } from "./firebaseConfig";
 
 const auth = getAuth()
@@ -10,11 +14,13 @@ export const googleSignIn = () => {
 
     signInWithPopup(auth, provider)
       .then((result) => {
-        localStorage.setItem("user", result.user) 
+
+        const user = JSON.stringify(result.user)
+        localStorage.setItem("user", user)
+
       }).catch((error) => {
         console.log(error.message)
       });
-
 }
 
 
@@ -23,21 +29,24 @@ export const facebookSignIn = () => {
 
     signInWithPopup(auth, provider)
     .then((result) => {
-      localStorage.setItem("user", result.user) 
+
+      const user = JSON.stringify(result.user)
+      localStorage.setItem("user", user)
+
     }).catch((error) => {
       console.log(error.message)
     });
 }
 
 
-export const emailSignIn = (email) => {
-  sendSignInLinkToEmail(auth, email, actionCodeSettings)
-    .then(() => {
-    localStorage.setItem('emailForSignIn', email);
+// export const emailSignIn = (email) => {
+//   sendSignInLinkToEmail(auth, email, actionCodeSettings)
+//     .then(() => {
+//     localStorage.setItem('emailForSignIn', email);
   
-  })
-    .catch((error) => {
-      const errorMessage = error.message;
-      console.log(errorMessage)
-  });
-}
+//   })
+//     .catch((error) => {
+//       const errorMessage = error.message;
+//       console.log(errorMessage)
+//   });
+// }

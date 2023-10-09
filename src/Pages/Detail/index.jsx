@@ -16,6 +16,7 @@ import classes from "./index.module.scss"
 export default function index() {
   const [article, setArticle] = useState({})
   const [isLoading, setIsLoading] = useState(false)
+  const [user, setUser] = useState({})
   const [searchTerm, setSearchTerm] = useState("")
   const { articleId } = useParams()
 
@@ -38,6 +39,11 @@ export default function index() {
     fetchSingleDoc()
   }, [])
 
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"))
+    setUser(user)
+  }, [])
+
   if (isLoading) return <Spinner message="Loading article..." spinner={classes.spinner} />
 
   console.log(article)
@@ -55,7 +61,9 @@ export default function index() {
         </div>
 
         <div className={classes.userActions}>
-          <i><SlNote /> Write</i>
+          <Link to={"/new-story"} style={{ textDecoration: "none", color: "gray"}}>
+            <i><SlNote /> Write</i>
+          </Link>
           
           <Button
             text="Sign up"
@@ -74,7 +82,7 @@ export default function index() {
 
           <div className={classes.user} onClick={() => {}}>
             <img
-              src="https://miro.medium.com/v2/resize:fill:32:32/0*mvgflI3mBCEBHxPU"
+              src={user.photoURL}
               className={classes.userImage}
             />
             <BiChevronDown />

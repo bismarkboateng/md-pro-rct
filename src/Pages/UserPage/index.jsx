@@ -3,7 +3,7 @@ import { PiBellRingingThin } from "react-icons/pi"
 import { SlNote } from "react-icons/sl"
 import { IoAddSharp } from "react-icons/io5"
 import { BiChevronDown } from "react-icons/bi"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 import { Navbar, Search } from "../../components"
 import classes from "./index.module.scss"
@@ -13,21 +13,26 @@ import { BsMedium } from "react-icons/bs"
 
 
 export default function index() {
-  // search term
+  const [user, setUser] = useState({})
   const [searchTerm, setSearchTerm] = useState("")
   const [actionClick, setActionClick] = useState(false)
   const [userClick, setUserClick] = useState(false)
+  const navigate = useNavigate()
 
   function onUserClickHandler() {
     setUserClick(prevUserClick => !prevUserClick)
   }
 
+
   useEffect(() => {
-    const user = localStorage.getItem("user")
-    console.log(user)
+    const user = JSON.parse(localStorage.getItem("user"))
+    if (!user) {
+      navigate("/")
+    }
+    setUser(user)
   }, [])
 
-  
+
   return (
     <section className={classes.userPage}>
       <Navbar
@@ -48,7 +53,8 @@ export default function index() {
           <PiBellRingingThin className={classes.notification}/>
           <div className={classes.user} onClick={onUserClickHandler}>
             <img
-              src="https://miro.medium.com/v2/resize:fill:32:32/0*mvgflI3mBCEBHxPU"
+              src={user.photoURL}
+              alt="user"
               className={classes.userImage}
             />
             <BiChevronDown />

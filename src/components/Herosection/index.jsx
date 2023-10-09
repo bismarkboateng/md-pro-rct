@@ -17,24 +17,24 @@ export default function index() {
   ]
 
 
-  function changeColor() {
-      spanRefs.forEach((elRef) => {
-        elRef.current.style.opacity = "0"
+  // function changeColor() {
+  //     spanRefs.forEach((elRef) => {
+  //       elRef.current.style.opacity = "0"
         
-        setTimeout(() => {
-          elRef.current.style.opacity = "1"
-        }, 1300)
-      })
+  //       setTimeout(() => {
+  //         elRef.current.style.opacity = "1"
+  //       }, 1300)
+  //     })
   
-  }
+  // }
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    setInterval(() => {
-      changeColor()
-    }, 3000)
+  //   setInterval(() => {
+  //     changeColor()
+  //   }, 3000)
     
-  })
+  // })
 
 
   return (
