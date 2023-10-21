@@ -58,7 +58,18 @@
     margin-top: 90px;
 }
 
-.write {
-    font-style: italic;
+.title {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
     margin-bottom: 10px;
+}
+
+.title__field::placeholder {
+    font-size: 20px;
+}
+
+
+.text__editor {
+    margin-top: 50px;
 }

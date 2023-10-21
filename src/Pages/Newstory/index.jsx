@@ -18,6 +18,7 @@ import { countWords, calculateReadingDuration} from "../../utils/textComputation
 
 export default function index() {
   const [article, setArticle] = useState("")
+  const [title, setTitle] = useState("")
   const [user, setUser] = useState({})
   const navigate = useNavigate()
 
@@ -34,20 +35,28 @@ export default function index() {
     const docRef = collection(db, "Articles")
 
     const date = getDate()
-    const title = article.split(/<\/h1>/)[0]
-    const content = article.split(/<\/h1>/).slice(1)[0]
     const numOfWords = countWords(article)
     const durationInMinutes = calculateReadingDuration(numOfWords, 200)
 
 
-    addDoc(docRef, {
+    console.log({
       author: user.displayName,
-      content: content,
+      content: article,
       duration: `${durationInMinutes} min read`,
       date: date,
       tag: "Programming",
       title: title
     })
+
+    addDoc(docRef, {
+      author: user.displayName,
+      content: article,
+      duration: `${durationInMinutes} min read`,
+      date: date,
+      tag: "Programming",
+      title: title
+    })
+
 
     .then(() => {
       // NB: user should be navigated to his posts
@@ -89,9 +98,20 @@ export default function index() {
       </Navbar>
 
       <div className={classes.quill}>
-        <p className={classes.write}>Write below</p>
+        <div className={classes.title}>
+          <ReactQuill
+            theme="bubble"
+            placeholder="Title"
+            className={classes.titleField}
+            value={title}
+            onChange={setTitle}
+          />
+        </div>
+
         <ReactQuill
           theme="bubble"
+          placeholder="content"
+          className={classes.textEditor}
           value={article}
           onChange={setArticle}
         />
