@@ -75,24 +75,18 @@ export default function index() {
 
         <section className={classes.miscellaneous}>
           <StaffPicks />
-          
           <div className={classes.discoverFollow}>
             <div className={classes.discover}>
               <Discover title="Recommended topics" />
             </div>
-
             <div className={classes.follow}>
               <h2 className={classes.followText}>Who to follow</h2>
               <UserCard />
             </div>
-
             <p className={classes.saved}>Saved Articles</p>
-
           </div>
-
         </section>
       </section>
-
     </section>
   )
 }

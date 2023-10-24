@@ -10,27 +10,11 @@ import ModalContext from "../../store/modal-context";
 
 
 export default function index() {
-  const [innerWidth, setInnerWidth] = useState(window.innerWidth)
   const [scrolling, setScrolling] = useState(false)
   const contextValue = useContext(ModalContext)
-
-
-  useEffect(() => {
-
-    const onSetInnerWidthHandler = () => {
-      setInnerWidth(window.innerWidth)
-    }
-
-    window.addEventListener("resize", onSetInnerWidthHandler)
-
-    return () => {
-      window.removeEventListener("resize", onSetInnerWidthHandler)
-    }
-  }, [innerWidth])
-
+  
 
   useEffect(() => {
-
     const handleScroll = () => {
       if (window.scrollY > 450) {
         setScrolling(true);
@@ -50,7 +34,7 @@ export default function index() {
 
 
   return (
-    <section>
+    <section className={styles.home}>
       { contextValue.isSignInModalOpen && <Modal /> }
  
       <Navbar 
@@ -71,47 +55,27 @@ export default function index() {
             onClick={contextValue.onSignInClickHandler}
             text="Get started"
           />
-
         </section>
       </Navbar>
       
       <Herosection />
       <Trending />
-      <div className={styles.articleDiscoverWrapper}>
-        <div className={styles.articleDiscover}>
-          {
-            ((innerWidth <= 330) || (innerWidth <= 480) || (innerWidth <= 767))
-            ?
-            (
-            <>
-              <div className={styles.discover}>
-                  <Discover />
-              </div>
-
-              <div className={styles.articles}>
-                  <ArticleList />
-              </div>
-            </>
-            ) : 
-            (
-            <>
-              <div className={styles.articles}>
-                  <ArticleList />
-              </div>
-              <div className={styles.discover}>
-                <Discover title="Discover more of what matters to you">
-                  <div className={styles.line}/>
-                  <ul className={styles.linkItemWrapper}>
-                    { Links.map((link) => (
-                      <li key={link.index} className={styles.linkItem}>{link.title}</li>
-                    ))}
-                  </ul>
-                </Discover>
-              </div>
-            </>
-            )
-          }
+      <div className={styles.articleDiscover}>
+        <div className={styles.articles}>
+            <ArticleList />
         </div>
+
+        <div className={styles.discover}>
+          <Discover title="Discover more of what matters to you">
+            <div className={styles.line} />
+            <ul className={styles.linkItemWrapper}>
+              { Links.map((link) => (
+                <li key={link.index} className={styles.linkItem}>{link.title}</li>
+              ))}
+            </ul>
+          </Discover>
+        </div>
+        
       </div>
     </section>
   )

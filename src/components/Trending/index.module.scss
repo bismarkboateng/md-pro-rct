@@ -33,13 +33,11 @@
     list-style-type: none;
 }
 
-
-
-
-
-
-
-
+@media screen and (max-width: 1280px) {
+    .trending {
+        width: 91%;
+    }
+}
 
 @media screen and (max-width: 1200px) {
     .trending {

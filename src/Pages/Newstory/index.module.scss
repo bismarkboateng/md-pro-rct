@@ -1,10 +1,18 @@
-.new__story {
-    width: 54%;
-    margin: auto;
+// .new__story {
+//     width: 54%;
+//     margin: auto;
+// }
+
+.nav__wrapper {
+    display: flex;
+    flex-direction: row;
+    // justify-content: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .story__nav {
-    padding: 10px 0px 0px 0px;
+    // padding: 10px 0px 0px 0px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -16,6 +24,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding: 0;
 
     p {
         font-size: 14px;
@@ -26,6 +35,7 @@
 .publish {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     gap: 18px;
 
@@ -36,10 +46,9 @@
     }
 }
 
-
 .user__image {
     border-radius: 50%;
-    height: 35%;
+    height: 32px;
     cursor: pointer;
 }
 
@@ -72,4 +81,89 @@
 
 .text__editor {
     margin-top: 50px;
+}
+
+
+@media screen and (min-width: 300px) {
+    .new__story {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .story__nav {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .quill {
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    .draft {
+        svg {
+            font-size: 43px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+    .publish {
+        gap: 5px;
+    }
+
+    .nav__wrapper {
+        width: 95%;
+        margin: auto;
+        gap: 8px;
+    }
+}
+
+@media screen and (min-width: 400px) {
+    .publish {
+        gap: 25px;
+    }
+
+    .quill {
+        width: 90%;
+        margin: 50px auto;
+    }
+}
+
+@media screen and (min-width: 765px) {
+    .quill {
+        width: 90%;
+        margin: 50px auto;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .quill {
+        width: 74%;
+        margin: 50px auto;
+    }
+}
+
+@media screen and (min-width: 1280px){
+    .story__nav {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .quill {
+        width: 50%;
+        margin: 50px auto;
+    }
+}
+
+@media screen and (min-width: 1536px) {
+    .story__nav {
+        width: 60%;
+    }
+
+    .quill {
+        width: 45%;
+    }
 }

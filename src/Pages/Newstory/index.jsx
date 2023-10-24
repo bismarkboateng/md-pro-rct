@@ -75,26 +75,32 @@ export default function index() {
       <Navbar
         nav={classes.storyNav}
       >
-        <div className={classes.draft}>
-          <Link to="/" style={{ color: "black", textDecoration: "none"}}>
-            <BsMedium fontSize={45} style={{ marginRight: "10px"}}/>
-          </Link>
-          <p>Draft in bismark</p>
+        <div className={classes.navWrapper}>
+          <div className={classes.draft}>
+            <Link to="/" style={{ color: "black", textDecoration: "none"}}>
+              <BsMedium 
+                fontSize={45} style={{ marginRight: "10px"}}
+
+              />
+            </Link>
+            <p>Draft in bismark</p>
+          </div>
+
+          <div className={classes.publish}>
+            <Button
+              onClick={onPublishClickHandler}
+              text="Publish"
+              className={classes.publishBtn}
+            />
+            {/* <p>...</p> */}
+            <CiBellOn fontSize={26} style={{ cursor: "pointer"}}/>
+            <img
+              src={user.photoURL}
+              className={classes.userImage}
+            />
+          </div>
         </div>
 
-        <div className={classes.publish}>
-          <Button
-            onClick={onPublishClickHandler}
-            text="Publish"
-            className={classes.publishBtn}
-          />
-          <p>...</p>
-          <CiBellOn fontSize={26} style={{ cursor: "pointer"}}/>
-          <img
-            src={user.photoURL}
-            className={classes.userImage}
-          />
-        </div>
       </Navbar>
 
       <div className={classes.quill}>
