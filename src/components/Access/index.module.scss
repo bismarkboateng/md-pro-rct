@@ -57,6 +57,23 @@
     .m_image {
         width: 169px;
     }
+
+    .access {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .story {
+        border-right: 0;
+        margin-bottom: 10%;
+    }
+
+    .story,
+    .voices {
+        width: 100%;
+        padding: 0px;
+    }
+
 }
 
 @media screen and (max-width: 376px) {

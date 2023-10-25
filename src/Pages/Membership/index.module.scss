@@ -17,12 +17,10 @@
     border-bottom: 1px solid #fff;
 }
 
-
 .background {
     background: white;
     transition: all 0.5s ease;
     border-bottom: 1px solid rgba(25, 25, 25, 1);
-
 }
 
 .nav__icon {
@@ -44,6 +42,8 @@
     }
 }
 
+
+
 .nav__list__items {
     display: flex;
     align-items: center;
@@ -52,15 +52,12 @@
 
 }
 
-
-
 .nav__wrapper {
     width: 97%;
     height: 100%;
     margin: auto;
     display: flex;
     flex-direction: row;
-    // justify-content: space-between;
     align-items: center;
 
 }
@@ -71,7 +68,7 @@
     border: none;
     color: #fff;
     background: #000;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 16px;
     border-radius: 20px;
     cursor: pointer;
@@ -90,8 +87,8 @@
 @media screen and (max-width: 558px) {
     .access {
         font-size: 13px;
-        padding: 5px 25px 5px 25px;
-        border-radius: 6px;
+        padding: 10px 25px 10px 25px;
+        border-radius: 18px;
     }
 
     .nav__item {
@@ -100,6 +97,44 @@
 
     main {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .nav__icon {
+        padding-left: 10%;
+    }
+
+    .nav__wrapper {
+        width: 96%;
+        margin: 0 auto;
+    }
+
+    .medium__icon {
+        svg {
+            font-size: 35px;
+        }
+    }
+
+    .access {
+        padding: 10px 15px;
+        border-radius: 18px;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .nav__wrapper {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .access {
+        padding: 3px 10px;
+        font-size: 12px;
+    }
+
+    .nav__icon {
+        width: 10%;
     }
 }
 

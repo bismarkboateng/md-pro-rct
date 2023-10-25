@@ -21,7 +21,7 @@ export default function index({ handleClickAction, linkColor, scrolling }) {
         </Link>
 
 
-        <Link to="/write" style={{ textDecoration: "none", color: "black"}}>
+        <Link to="/partner-program" style={{ textDecoration: "none", color: "black"}}>
             <li className={styles.navItem} style={{ color: scrolling ? "black" : linkColor}}>
                 Write
             </li>

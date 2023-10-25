@@ -22,7 +22,6 @@
         line-height: 24px;
         color: #fff;
         font-weight: 545;
-        // margin-bottom: 20px;
     }
 }
 
@@ -32,7 +31,6 @@
     right: 10%;
     z-index: -10;
     width: 1230px;
-    // transform: rotate(60deg);
 }
 
 .apply {
@@ -43,6 +41,25 @@
     color: #fff;
     border: none;
 
+}
+
+
+@media screen and (min-width: 1024px) {
+    .write__hero__wrapper {
+        height: 98vh;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .write__hero__wrapper {
+        height: 75vh;
+    }   
+}
+
+@media screen and (min-width: 1536px) {
+    .write__hero__wrapper {
+        height: 65vh;
+    }
 }
 
 @media screen and (max-width: 768px) {

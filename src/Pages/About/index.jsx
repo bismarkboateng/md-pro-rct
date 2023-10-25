@@ -31,24 +31,19 @@ export default function index() {
             </div>
           </Link>
 
-
           <Button
             className={styles.signIn}
             text="Sign in"
             onClick={handleClickAction}
           >
-
             <button
               className={styles.signUp}
               onClick={handleClickAction}
             >
               Sign Up
             </button>
-
           </Button>
-
         </section>
-
       </Navbar>
 
       <h1 className={styles.title}>

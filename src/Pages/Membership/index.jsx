@@ -15,12 +15,24 @@ import ModalContext from "../../store/modal-context";
 
 export default function index() {
   const [scrolling, setScrolling] = useState(false)
+  const [inWidth, setInWidth] = useState(false)
+
   const contextValue = useContext(ModalContext)
   const handleClickAction =contextValue.onSignInClickHandler
   const linkColor = "#fff"
 
-  useEffect(() => {
 
+  useEffect(() => {
+    const onWindowResize = () => {
+      setInWidth(window.innerWidth)
+    }
+    window.addEventListener("resize", onWindowResize)
+    return () => {
+      window.removeEventListener("resize", onWindowResize)
+    }
+  }, [inWidth])
+
+  useEffect(() => {
     const onHandleScroll = () => {
       if (window.scrollY > 450) {
         setScrolling(true)
@@ -28,17 +40,13 @@ export default function index() {
         setScrolling(false)
       }
     }
-
-
     window.addEventListener("scroll", onHandleScroll)
-
     return () => {
       window.removeEventListener("scroll", onHandleScroll)
     }
-
   }, [])
 
-  const text = window.innerWidth <= 588 ? "Get started" : "Get unlimited access"
+  const text =  +inWidth < 420 ? "Get started" : "Get unlimited access"
 
   return (
    <main>
@@ -55,7 +63,12 @@ export default function index() {
             <i className={styles.mediumIcon}>
               <BsMedium color={`${scrolling ? "black" : ""}`}/>
             </i>
-            <h1 style={{ color: scrolling ? "black" : ""}}>Medium</h1>
+            <h1 
+              style={{ color: scrolling ? "black" : ""}}
+              className={styles.mediumTitle}
+            >
+              Medium
+            </h1>
           </div>
         </Link>
         <Navlinks 
@@ -68,7 +81,6 @@ export default function index() {
           onClick={contextValue.onSignInClickHandler}
           text={text}
         />
-
       </section>
     </Navbar>
 

@@ -10,3 +10,9 @@
         font-weight: 400;
     }
 }
+
+@media screen  and (min-width: 300px) {
+    .faq__wrapper {
+        width: 100%;
+    }
+}
