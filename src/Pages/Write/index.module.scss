@@ -94,11 +94,14 @@
 
 
 @media screen and (min-width: 200px) {
-
     .sign__in,
     .sign__up {
         opacity: 0;
-    } 
+    }
+
+    .faq__child__content {
+        width: 95%;
+    }
 }
 
 
@@ -130,4 +133,10 @@
     .sign__up {
         opacity: 1;
     } 
+}
+
+@media screen and (min-width: 1536px){
+    .faq__child__content {
+        width: 50%;
+    }
 }

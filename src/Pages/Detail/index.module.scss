@@ -9,10 +9,11 @@
     flex-direction: row;
     align-items: center;
     margin-right: auto;
+}
 
-    svg {
-        margin-right: 18px;
-    }
+.medium__icon {
+    margin-right: 18px;
+    font-size: 45px;
 }
 
 .nav {
@@ -98,4 +99,63 @@
     width: 38%;
     margin: auto;
     margin-top: 4%;
+}
+
+@media screen and (min-width: 200px) {
+    .button__wrapper {
+        display: none;
+    }
+    
+    .user__image {
+        width: 30px;
+    }
+
+    .user__actions {
+        gap: 8px;
+    }
+
+    .medium__icon {
+        font-size: 35px;
+    }
+
+    .detail__wrapper {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    .medium__icon {
+        font-size: 40px;
+    }
+}
+
+
+@media screen and (min-width: 912px) {
+    .button__wrapper {
+        display: flex;
+        margin-left: 10px;
+    }
+
+    .detail__wrapper {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .detail__wrapper {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 1536px) {
+    .button__wrapper {
+        margin-right: 10px;
+        margin-left: 13px;
+    }
+
+    .detail__wrapper {
+        width: 38%;
+        margin: auto;
+        margin-top: 4%;
+    }
 }

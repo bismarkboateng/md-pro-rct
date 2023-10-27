@@ -7,7 +7,6 @@ import { Spinner, Button, Navbar,Search, ProfileDropDown, ArticleDetailContent }
 import { SlNote } from "react-icons/sl"
 import { BiChevronDown } from "react-icons/bi"
 import { BsMedium } from "react-icons/bs"
-
 import classes from "./index.module.scss"
 
 
@@ -28,7 +27,6 @@ export default function index() {
       const docSnapshot = await getDoc(docRef)
 
       if (docSnapshot.exists()) {
-        // console.log("Document data:", docSnap.data());
         setArticle({ ...docSnapshot.data() })
         setIsLoading(false)
       } else {
@@ -46,7 +44,6 @@ export default function index() {
 
   if (isLoading) return <Spinner message="Loading article..." spinner={classes.spinner} />
 
-  console.log(article)
 
   return (
     <section>
@@ -55,7 +52,9 @@ export default function index() {
       >
         <div className={classes.searchField}>
           <Link to="/" style={{ textDecoration: "none", color: "black"}}>
-            <BsMedium  fontSize={45}/>
+            <BsMedium
+              className={classes.mediumIcon}
+            />
           </Link>
           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </div>

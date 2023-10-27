@@ -31,3 +31,29 @@
     margin-top: 250px;
     margin-bottom: 25px;
 }
+
+
+@media screen and (min-width: 200px) {
+    .article__title {
+        font-size: 32px;
+        margin-top: 20px;
+    }
+
+    .article__image {
+        margin-top: 50px;
+        width: 90%;
+        height: 90%;
+    }
+
+    .article__content {
+        width: 100%;
+    }
+}
+
+
+@media screen and (min-width: 820px) {
+    .article__image {
+        width: 80%;
+        height: 80%;
+    }
+}

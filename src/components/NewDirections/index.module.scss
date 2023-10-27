@@ -34,6 +34,44 @@
 }
 
 
+@media screen and (min-width: 768px) {
+    .header {
+        line-height: 55px;
+    }
+
+    .access {
+        left: 35%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .header {
+        line-height: 60px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .header {
+        line-height: 80px;
+    }
+
+    .access {
+        left: 38%;
+    }
+}
+
+@media screen and (min-width: 1536px) {
+    .header {
+        line-height: 130px;
+    }
+
+    .access {
+        font-weight: 700;
+        left: 43%;
+    }
+}
+
+
 @media screen and (max-width: 767px) {
     .header {
         font-size: 60px;
@@ -48,6 +86,11 @@
 @media screen and (max-width: 480px) {
     .access {
         left: 24%;
+    }
+
+    .header {
+        font-size: 40px;
+        line-height: 50px;
     }
 }
 
