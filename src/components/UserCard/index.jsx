@@ -27,12 +27,12 @@ export default function index() {
                     <div className={classes.userName}>{user.name}</div>
                     <div className={classes.userDescription}>{user.description}</div>
                 </div>
+                
                 <Button
                     className={`${userLogin && userLoginClass} ${classes.button}`}
                     onClick={onFollowClickHandler}
-                >
-                    Follow
-                </Button>
+                    text="Follow"
+                />
 
             </div>
         ))}

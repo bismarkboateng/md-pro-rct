@@ -20,7 +20,11 @@
 
 @media screen and (max-width: 480px) {
     .articles {
-        width: inherit;
+        width: 100%;
+    }
+
+    .article__wrapper {
+        width: 95%;
     }
 }
 

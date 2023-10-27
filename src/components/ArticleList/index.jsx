@@ -38,7 +38,7 @@ export default function index() {
 
   return (
     <section className={styles.articles}>
-      <ul>
+      <ul className={styles.articleWrapper}>
         { articles.map((article) => (
             <ArticleCard
               key={Math.random()} 

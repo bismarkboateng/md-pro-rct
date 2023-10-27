@@ -1,12 +1,11 @@
 .input__div {
-    border:1px solid #242424;
+    border: 1px solid rgb(36, 36, 36);
     padding: 8px;
     border-radius: 20px;
     margin-bottom: 13px;
     text-align: left;
     display: flex;
     flex-direction: row;
-    // justify-content: ;
     
     cursor: pointer;
 
@@ -31,4 +30,33 @@
 
 .move__text {
     margin-right: 30px;
+}
+
+@media screen and (min-width: 1024px) {
+    .input__div {
+        padding: 0;
+        padding-left: 2px;
+        align-items: center;
+        font-size: 12px;
+
+        i {
+            margin-right: 5px;
+        }
+
+        svg {
+            font-size: 12px;
+        }
+    }
+}
+
+
+@media screen and (min-width: 1536px) {
+    .input__div {
+        padding: 10px;
+        font-size: 20px;
+
+        svg {
+            font-size: 25px;
+        }
+    }
 }

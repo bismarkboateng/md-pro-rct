@@ -95,3 +95,13 @@
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 15px;
 }
+
+
+@media screen and (min-width: 1024px) {
+    .user__content__wrapper {
+        flex-direction: column;
+        align-items: start;
+        gap: 8px;
+        margin-bottom: 30px;
+    }
+}

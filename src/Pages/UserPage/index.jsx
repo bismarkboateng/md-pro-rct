@@ -40,7 +40,10 @@ export default function index() {
       >
 
         <div className={classes.mediumSearch}>
-          <BsMedium fontSize={45} style={{ marginRight: "20px"}} />
+          <BsMedium
+            style={{ marginRight: "20px"}}
+            className={classes.mediumIcon}
+          />
           <div className={classes.searchField}>
             <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           </div>
@@ -48,7 +51,11 @@ export default function index() {
 
         <div className={classes.userActions}>
           <Link to="/new-story" style={{ textDecoration: "none", color: "gray"}}>
-           <i><SlNote /> Write</i>
+           <i className={classes.userNote}>
+            <SlNote
+              className={classes.noteIcon}
+            /> Write
+           </i>
           </Link>
           <PiBellRingingThin className={classes.notification}/>
           <div className={classes.user} onClick={onUserClickHandler}>
@@ -64,13 +71,17 @@ export default function index() {
       </Navbar>
 
       <section className={classes.userContent}>
+        
         <section className={classes.articleList}>
           <ul className={classes.actions}>
             <li><IoAddSharp /></li>
             <li onClick={() => setActionClick(true)}>For you</li>
             <li onClick={() => setActionClick(true)}>Following</li>
           </ul>
-          <ArticleList />
+
+          <div className={classes.articles}>
+           <ArticleList />
+          </div>
         </section>
 
         <section className={classes.miscellaneous}>
@@ -86,7 +97,9 @@ export default function index() {
             <p className={classes.saved}>Saved Articles</p>
           </div>
         </section>
+
       </section>
+      
     </section>
   )
 }

@@ -2,7 +2,6 @@
     padding: 0;
 }
 
-
 .user__nav {
     padding: 10px 15px;
     display: flex;
@@ -26,9 +25,8 @@
     gap: 45px;
     font-size: 19px;
     color: #6B6B6B;
-    // margin-left: 253%;
 
-    i {
+    .user__note {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -36,7 +34,7 @@
         gap: 5px;
         cursor: pointer;
         
-        svg {
+        .search__icon {
             font-size: 20px;
         }
 
@@ -82,7 +80,7 @@
 }
 
 .user__content {
-    width: 59%;
+    width: 100%;
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -90,7 +88,7 @@
 }
 
 .article__list {
-    width: 70%;
+    width: 100%;
     border-right: 1px solid #F2F2F2;
 }
 
@@ -162,4 +160,147 @@
 .discover__follow {
     position: sticky;
     top: 10%;
+}
+
+
+@media screen and (min-width: 200px) {
+    .user__page {
+        width: 100%;
+    }
+
+    .user__nav {
+        width: 100%;
+        padding: 8px 0;
+    }
+
+    .medium__search {
+        margin-left: 30px;
+    }
+
+    .medium__icon {
+        font-size: 35px;
+        margin-right: auto;
+    }
+    .user__actions {
+        gap: 5px;
+    }
+
+    .user__note {
+        opacity: 0;
+    }
+
+    .note__icon {
+        opacity: 0;
+    }
+
+    .user__image {
+        width: 25%;
+        height: 25%;
+        margin-right: 0;
+    }
+
+    .user__content {
+        width: 100%;
+    }
+
+    .article__list {
+        border-right: 0;
+    }
+
+    .actions {
+        width: 99%;
+        margin-left: 11%;
+    }
+
+    .miscellaneous {
+        display: none;
+    }
+
+
+    .articles {
+        width: 92%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 374px) {
+    .user__content {
+        width: 92%;
+    }
+
+    .articles {
+        width: 92%;
+    }
+
+    .actions {
+        width: 95%;
+        margin-left: 0;
+    }
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .user__note {
+        opacity: 1;
+        margin-right: 20px;
+    }
+
+    .note__icon {
+        opacity: 1;
+        font-size: 24px;
+    }
+
+    .actions {
+        width: 97%;
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .user__content {
+        gap: 0;
+    }
+    .miscellaneous {
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid #F2F2F2;
+        padding: 20px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .actions {
+        margin-left: 10%;
+    }
+}
+
+@media screen and (min-width: 1536px) {
+
+    .medium__icon {
+        font-size: 45px;
+    }
+
+    .user__note {
+        opacity: 1;
+    }
+
+    .note__icon {
+        font-size: 25px;
+        opacity: 1;
+    }
+
+    .actions {
+        margin-left: 4%;
+    }
+
+    .user__content {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .miscellaneous {
+        width: 40%;
+    }
 }

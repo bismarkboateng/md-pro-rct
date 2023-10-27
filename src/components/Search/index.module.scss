@@ -1,5 +1,5 @@
 .search {
-    width: 250px;
+    // width: 250px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -8,10 +8,14 @@
     border-radius: 15px;
     background: #f9f9f9;
     padding: 5px;
+
+    // i {
+    //     margin-right: 7px;
+    // }
 }
 
 .search__icon {
-    margin-right: 7px;
+    font-size: 20px;
 }
 
 .search__input {
@@ -28,3 +32,23 @@
     outline: none;
     border: none;
 }
+
+
+@media screen and (min-width: 200px) {
+    .search {
+        display: none;
+    }
+
+    .search__icon {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .search {
+         display: flex;
+    } 
+    .search__icon {
+        font-size: 25px;
+    }
+ }
