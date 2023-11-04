@@ -2,6 +2,12 @@
     font-size: 15px;
     list-style-type: none;
     cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        color: rgb(82, 80, 80);
+        font-size: 16px;
+    }
 }
 
 .nav__list__items {
@@ -10,6 +16,7 @@
     margin-right: 30px;
     gap: 25px;
 }
+
 
 @media screen and (min-width: 300px) {
     .nav__item {

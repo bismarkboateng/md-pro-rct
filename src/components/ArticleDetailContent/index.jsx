@@ -16,7 +16,7 @@ export default function index({ article }) {
         <p className={classes.metaData}>{ article.duration } . { article.date}</p>
    
         <img 
-            src={articleImage}
+            src={article.image}
             alt="article" 
             className={classes.articleImage}
          />

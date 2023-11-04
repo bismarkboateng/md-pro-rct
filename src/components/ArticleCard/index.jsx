@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import styles from "./index.module.scss";
-import { MdOutlineBookmarkAdd } from "react-icons/md";
+import { CiBookmarkPlus } from "react-icons/ci";
 import { Link } from "react-router-dom"; 
+
+
 
 
 export default function index({ article, articleImage, profileImage}) {
@@ -32,32 +34,27 @@ export default function index({ article, articleImage, profileImage}) {
     <div className={styles.articleCardWrapper}>
 
       <div className={styles.articleContent}>
-
         <div className={styles.profileAuthor}>
           <img src={profileImage} alt="author image"
             className={styles.profileImage}
           />
           <span>{article.author}</span>
         </div>
-
         <Link to={`/read/${article.id}`} style={{ textDecoration: "none"}}>
           <h1 dangerouslySetInnerHTML={createMarkup(article.title)} />
         </Link>
         <div dangerouslySetInnerHTML={createMarkup(content)} className={styles.subTitle} />
-        
         <div className={styles.bookmarkDates}>
           <div className={styles.dateDurationTagBookmarkSvg}>
-            <div className={styles.dateDuration}>{article.date} . {article.duration}.</div>
+            <div className={styles.dateDuration}>{article.date} . {article.duration} min read.</div>
             <div className={styles.tag}>{article.tag}</div>
           </div>
-
-          <MdOutlineBookmarkAdd cursor={"pointer"} />
+          <CiBookmarkPlus cursor={"pointer"} />
         </div>
-
       </div>
 
       <div className={styles.svgImage}>
-        <img src={articleImage} 
+        <img src={article.image} 
           alt={article.title} 
           className={styles.articleImage}
         />

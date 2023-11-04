@@ -39,14 +39,15 @@ export default function index() {
     const durationInMinutes = calculateReadingDuration(numOfWords, 200)
 
 
-    console.log({
-      author: user.displayName,
-      content: article,
-      duration: `${durationInMinutes} min read`,
-      date: date,
-      tag: "Programming",
-      title: title
-    })
+    // console.log({
+    //   author: user.displayName,
+    //   content: article,
+    //   duration: `10 min read`,
+    //   date: date,
+    //   tag: "Programming",
+    //   title: title
+    // })
+
 
     addDoc(docRef, {
       author: user.displayName,
