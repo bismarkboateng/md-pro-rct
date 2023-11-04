@@ -6,6 +6,7 @@ import { BiChevronDown } from "react-icons/bi"
 import { Link, useNavigate } from "react-router-dom"
 
 import { Navbar, Search } from "../../components"
+import { DefaultProfile } from "../../assets"
 import classes from "./index.module.scss"
 import { ArticleList, ProfileDropDown, StaffPicks, Discover, UserCard } from "../../components"
 import { BsMedium } from "react-icons/bs"
@@ -19,18 +20,21 @@ export default function index() {
   const [userClick, setUserClick] = useState(false)
   const navigate = useNavigate()
 
+
   function onUserClickHandler() {
     setUserClick(prevUserClick => !prevUserClick)
   }
 
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"))
+    const user = JSON.parse(localStorage.getItem("User"))
     if (!user) {
       navigate("/")
     }
     setUser(user)
   }, [])
+
+  console.log(user)
 
 
   return (
@@ -60,13 +64,18 @@ export default function index() {
           <PiBellRingingThin className={classes.notification}/>
           <div className={classes.user} onClick={onUserClickHandler}>
             <img
-              src={user.photoURL}
+              src={user.photoURL || DefaultProfile }
               alt="user"
               className={classes.userImage}
             />
             <BiChevronDown />
           </div>
-          {userClick &&  <ProfileDropDown onClick={onUserClickHandler} /> }
+          {userClick &&  
+            <ProfileDropDown 
+              onClick={onUserClickHandler}
+              user={user}
+            />
+          }
         </div>
       </Navbar>
 

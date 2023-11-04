@@ -1,13 +1,19 @@
 import { useParams, Link } from "react-router-dom"
 import { doc, getDoc } from "firebase/firestore" 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 
 import { db } from "../../utils/firebaseConfig"
-import { Spinner, Button, Navbar,Search, ProfileDropDown, ArticleDetailContent } from "../../components"
+import { DefaultProfile } from "../../assets"
+import { 
+  Spinner, Button, Navbar,
+  Search, ArticleDetailContent, Modal
+} from "../../components"
 import { SlNote } from "react-icons/sl"
 import { BiChevronDown } from "react-icons/bi"
 import { BsMedium } from "react-icons/bs"
 import classes from "./index.module.scss"
+import ModalContext from "../../store/modal-context";
+
 
 
 
@@ -18,6 +24,7 @@ export default function index() {
   const [user, setUser] = useState({})
   const [searchTerm, setSearchTerm] = useState("")
   const { articleId } = useParams()
+  const contextValue = useContext(ModalContext)
 
   const docRef = doc(db, "Articles", articleId);
 
@@ -25,7 +32,6 @@ export default function index() {
     setIsLoading(true)
     async function fetchSingleDoc() {
       const docSnapshot = await getDoc(docRef)
-
       if (docSnapshot.exists()) {
         setArticle({ ...docSnapshot.data() })
         setIsLoading(false)
@@ -33,7 +39,6 @@ export default function index() {
         console.log("No such document!");
       }
     }
-
     fetchSingleDoc()
   }, [])
 
@@ -47,6 +52,8 @@ export default function index() {
 
   return (
     <section>
+      { contextValue.isSignInModalOpen && <Modal /> }
+
       <Navbar
         nav={classes.nav}
       >
@@ -58,30 +65,27 @@ export default function index() {
           </Link>
           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </div>
-
         <div className={classes.userActions}>
           <Link to={"/new-story"} style={{ textDecoration: "none", color: "gray"}}>
             <i><SlNote /> Write</i>
           </Link>
-          
           <Button
             text="Sign up"
             className={classes.signUp}
-            onClick={() => {console.log("Sign up")}}
+            onClick={contextValue.onSignInClickHandler}
             buttonWrapper={classes.buttonWrapper}
           >
             <button
-              onClick={() => {console.log("Sign in")}}
+              onClick={contextValue.onSignInClickHandler}
               className={classes.signIn}
             
             >
               Sign in
             </button>
           </Button>
-
           <div className={classes.user} onClick={() => {}}>
             <img
-              src={user.photoURL}
+              src={user?.photoURL || DefaultProfile}
               className={classes.userImage}
             />
             <BiChevronDown />

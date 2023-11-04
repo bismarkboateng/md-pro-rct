@@ -1,3 +1,6 @@
+import { signOut } from "firebase/auth"
+import { useNavigate } from "react-router-dom"
+import { auth } from "../../utils/firebaseConfig"
 import { PiStarFourThin } from "react-icons/pi"
 
 import Constants from "./Constants"
@@ -7,7 +10,15 @@ import classes from "./index.module.scss"
 
 
 
-export default function index({ onClick }) {
+export default function index({ onClick, user }) {
+  const navigate = useNavigate()
+
+  async function onSignOutHandler() {
+    await signOut(auth)
+    localStorage.removeItem("User")
+    navigate("/")
+  }
+
   return (
     <>
     <div className={classes.backdrop} onClick={onClick} />
@@ -40,8 +51,12 @@ export default function index({ onClick }) {
         </ul>
 
         <div className={classes.signOut}>
-            <div>Sign out</div>
-            <p>bi*****@gmail.com</p>
+            <div 
+                onClick={onSignOutHandler}
+            >
+                Sign out
+            </div>
+            <p>{user?.email}</p>
         </div>
     </section>
     </>

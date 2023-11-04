@@ -37,16 +37,3 @@ export const facebookSignIn = () => {
       console.log(error.message)
     });
 }
-
-
-// export const emailSignIn = (email) => {
-//   sendSignInLinkToEmail(auth, email, actionCodeSettings)
-//     .then(() => {
-//     localStorage.setItem('emailForSignIn', email);
-  
-//   })
-//     .catch((error) => {
-//       const errorMessage = error.message;
-//       console.log(errorMessage)
-//   });
-// }

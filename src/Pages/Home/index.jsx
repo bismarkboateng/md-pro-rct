@@ -30,7 +30,7 @@ export default function index() {
     };
   }, []);
 
-  const handleClickAction =contextValue.onSignInClickHandler
+  const handleClickAction = contextValue.onSignInClickHandler
 
 
   return (
@@ -62,7 +62,7 @@ export default function index() {
       <Trending />
       <div className={styles.articleDiscover}>
         <div className={styles.articles}>
-            <ArticleList />
+          <ArticleList />
         </div>
 
         <div className={styles.discover}>
@@ -75,7 +75,6 @@ export default function index() {
             </ul>
           </Discover>
         </div>
-        
       </div>
     </section>
   )

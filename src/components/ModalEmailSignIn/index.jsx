@@ -1,25 +1,36 @@
-import classes from "./index.module.scss"
-import { GoChevronLeft } from "react-icons/go"
-import { Input } from ".."
 import { useState } from "react"
+import { sendSignInLinkToEmail } from "firebase/auth"
+
+import { Input } from ".."
 import { Button } from ".."
+import { actionCodeSettings, auth } from "../../utils/firebaseConfig"
+import classes from "./index.module.scss"
 
 
 
 export default function index(props) {
   const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+
 
   function onInputFieldChange(event) {
     setEmail(event.target.value)
   }
 
   function onClickEmailButton() {
-    console.log("sign in email button clicked")
+    sendSignInLinkToEmail(auth, email, actionCodeSettings)
+      .then(() => {
+        localStorage.setItem("signInEmail", email)
+        setMessage("An email has been sent to your email address. Click the link in the email to login")
+      })
+      .catch((error) => {
+        setMessage("An error occurred when sending link to your email address: ", error.name)
+      })
   }
 
   return (
     <section className={classes.modalEmail}>
-        <h1>Sign in with email</h1>
+        <h1>Sign up / Sign in with email</h1>
         <p className={classes.text}>
           Enter the email address associated with your account, and we'll send a magic link to your inbox.
         </p>
@@ -34,17 +45,17 @@ export default function index(props) {
           label={classes.label}
         />
 
+        { message && (
+          <div>
+            { message }
+          </div>
+        )}
+
         <Button
           className={classes.emailButton}
           onClick={onClickEmailButton}
-          text="Continue"
+          text="Sign up / Sign in"
         />
-        
-        <div className={classes.all} onClick={props.onClickSignIn}>
-            <i><GoChevronLeft /></i>
-            <p>All sign in options</p>
-        </div>
-
     </section>
   )
 }

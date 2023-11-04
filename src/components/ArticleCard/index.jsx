@@ -14,17 +14,15 @@ export default function index({ article, articleImage, profileImage}) {
     const onResizeHandler = () => {
       setInnerWidth(window.innerWidth)
     }
-
     window.addEventListener("resize", onResizeHandler)
-
     return () => {
       window.removeEventListener("resize", onResizeHandler)
     }
-
   }, [innerWidth])
 
 
-  const content = innerWidth <= 500 ? article.content.slice(0, 30) : article.content.slice(0, 100)
+  const content = innerWidth <= 500 ? article.content.substring(0, 20) : article.content.slice(0, 15)
+  const title = innerWidth <= 500 ? article.title.substring(0, 20) : article.content.slice(0, 15)
 
   const createMarkup = (text) => {
     return {__html: text }
@@ -34,16 +32,22 @@ export default function index({ article, articleImage, profileImage}) {
     <div className={styles.articleCardWrapper}>
 
       <div className={styles.articleContent}>
+
         <div className={styles.profileAuthor}>
           <img src={profileImage} alt="author image"
             className={styles.profileImage}
           />
           <span>{article.author}</span>
         </div>
+
         <Link to={`/read/${article.id}`} style={{ textDecoration: "none"}}>
-          <h1 dangerouslySetInnerHTML={createMarkup(article.title)} />
+          <div className={styles.header}>
+            <h1 dangerouslySetInnerHTML={createMarkup(title)} /><span>...</span>
+          </div>
         </Link>
-        <div dangerouslySetInnerHTML={createMarkup(content)} className={styles.subTitle} />
+
+        <div dangerouslySetInnerHTML={createMarkup(content)} className={styles.content} />
+       
         <div className={styles.bookmarkDates}>
           <div className={styles.dateDurationTagBookmarkSvg}>
             <div className={styles.dateDuration}>{article.date} . {article.duration} min read.</div>
@@ -54,7 +58,8 @@ export default function index({ article, articleImage, profileImage}) {
       </div>
 
       <div className={styles.svgImage}>
-        <img src={article.image} 
+        <img
+          src={article.image} 
           alt={article.title} 
           className={styles.articleImage}
         />

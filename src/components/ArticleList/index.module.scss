@@ -1,11 +1,7 @@
 // .articles {
-//     border: 1px solid red;
+//     position: relative;
 // }
-// @media screen and (max-width: 1200px) {
-//     .articles {
-//         border: 1px solid red;
-//     }
-// }
+
 .spinner {
     position: absolute;
     top: 90%;
@@ -24,12 +20,26 @@
     }
 
     .article__wrapper {
-        width: 95%;
+        width: 100%;
     }
 }
 
 @media screen and (max-width: 330px) {
     .articles {
-        width: 300px;
+        width: 100%;
+    }
+
+    .article__wrapper {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .articles {
+        width: 100%;
+    }
+
+    .article__wrapper {
+        padding: 0;
     }
 }

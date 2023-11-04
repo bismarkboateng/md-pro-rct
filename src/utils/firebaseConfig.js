@@ -1,4 +1,5 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp } from "firebase/app"
+import { getAuth } from "firebase/auth"
 import { getFirestore } from "firebase/firestore"
 
 const env = import.meta.env
@@ -12,24 +13,12 @@ const firebaseConfig = {
   appId: env.VITE_REACT_APP_FIREBASE_APPID,
 };
 
-
-
-export const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig)
+export const auth = getAuth(app)
 export const db = getFirestore()
 
 
 export const actionCodeSettings = {
-
-  url: "localhost",
-  // This must be true.
+  url: "http://localhost:5173/confirm",
   handleCodeInApp: true,
-  iOS: {
-    bundleId: 'com.example.ios'
-  },
-  android: {
-    packageName: 'com.example.android',
-    installApp: true,
-    minimumVersion: '12'
-  },
-  dynamicLinkDomain: 'localhost'
 };

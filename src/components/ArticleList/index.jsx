@@ -16,28 +16,32 @@ export default function index() {
   const collectionRef = collection(db, "Articles")
   const articleImage = Articles[0].image
   const profileImage = Articles[0].profileImage
+  // let loader
 
 
   useEffect(() => {
     setIsLoading(true)
     async function fetchArticles() {
       const articleSnapshot = await getDocs(collectionRef)
-
       articleSnapshot.docs.forEach((doc) => {
         setArticles((prevArticles) => [...prevArticles, { ...doc.data(), id: doc.id }])
       })
       setIsLoading(false)
     }
-
     fetchArticles()
-
   }, [])
 
-  if (isLoading) return <Spinner message="Loading articles...." spinner={styles.spinner} />
+  // if (isLoading) {
+  //   loader = <Spinner  message="Loading articles...." spinner={styles.spinner} />
+  // }
 
+  if (isLoading) {
+    return <Spinner  message="Loading articles...." spinner={styles.spinner} />
+  }
 
   return (
     <section className={styles.articles}>
+      {/* {loader} */}
       <ul className={styles.articleWrapper}>
         { articles.map((article) => (
             <ArticleCard

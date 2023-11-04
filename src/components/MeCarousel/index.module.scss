@@ -1,0 +1,21 @@
+// .mem__carousel {
+
+// }
+
+
+.carousel__header {
+    font-weight: 400;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+@media screen and (min-width: 280px) {
+//    .mem__carousel {
+
+//    }
+   .carousel__header {
+        font-size: 28px;
+        line-height: 29.4px;
+        letter-spacing: -0.56px;
+   } 
+}
