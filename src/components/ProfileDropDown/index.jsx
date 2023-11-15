@@ -15,7 +15,7 @@ export default function index({ onClick, user }) {
 
   async function onSignOutHandler() {
     await signOut(auth)
-    localStorage.removeItem("User")
+    localStorage.removeItem("user")
     navigate("/")
   }
 

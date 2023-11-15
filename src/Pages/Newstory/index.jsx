@@ -23,11 +23,12 @@ export default function index() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"))
-    if (!user) {
+    const User = JSON.parse(localStorage.getItem("user"))
+    if (User) {
+      setUser(User)
+    } else {
       navigate("/")
     }
-    setUser(user)
   }, [])
 
 
@@ -38,19 +39,8 @@ export default function index() {
     const numOfWords = countWords(article)
     const durationInMinutes = calculateReadingDuration(numOfWords, 200)
 
-
-    // console.log({
-    //   author: user.displayName,
-    //   content: article,
-    //   duration: `10 min read`,
-    //   date: date,
-    //   tag: "Programming",
-    //   title: title
-    // })
-
-
     addDoc(docRef, {
-      author: user.displayName,
+      author: user?.email?.slice(0, 11),
       content: article,
       duration: `${durationInMinutes} min read`,
       date: date,
@@ -58,21 +48,18 @@ export default function index() {
       title: title
     })
 
-
     .then(() => {
       // NB: user should be navigated to his posts
-      navigate("/")
+      navigate("/user-page")
     })
 
     .catch((err) => {
-      console.log(err)
+      alert("Error publishing: ", err.message)
     })
-
   }
 
   return (
     <section className={classes.newStory}>
-
       <Navbar
         nav={classes.storyNav}
       >
@@ -81,10 +68,9 @@ export default function index() {
             <Link to="/" style={{ color: "black", textDecoration: "none"}}>
               <BsMedium 
                 fontSize={45} style={{ marginRight: "10px"}}
-
               />
             </Link>
-            <p>Draft in bismark</p>
+            <p>Draft in {user?.email?.slice(0, 11)}...</p>
           </div>
 
           <div className={classes.publish}>
@@ -101,7 +87,6 @@ export default function index() {
             />
           </div>
         </div>
-
       </Navbar>
 
       <div className={classes.quill}>
@@ -114,7 +99,6 @@ export default function index() {
             onChange={setTitle}
           />
         </div>
-
         <ReactQuill
           theme="bubble"
           placeholder="content"

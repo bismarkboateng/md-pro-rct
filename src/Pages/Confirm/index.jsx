@@ -30,16 +30,16 @@ export default function index(props) {
 
   function onClickEmailButton() {
     if(isSignInWithEmailLink(auth, window.location.href)) {
-        signInWithEmailLink(auth, email,window.location.href)
-            .then((result) => {
-                localStorage.removeItem("signInEmail")
-                localStorage.setItem("User", JSON.stringify(result.user))
-                navigate("/user-page")
-            })
+      signInWithEmailLink(auth, email,window.location.href)
+        .then((result) => {
+            localStorage.removeItem("signInEmail")
+            localStorage.setItem("user", JSON.stringify(result.user))
+            navigate("/user-page")
+        })
 
-            .catch((error) => {
-                setMessage("An error occurred during signIn: ", error.name)
-            })
+        .catch((error) => {
+            setMessage("An error occurred during signIn: ", error.name)
+        })
     }
   }
 

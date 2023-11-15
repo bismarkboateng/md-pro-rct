@@ -46,7 +46,7 @@ export default function index(props) {
         />
 
         { message && (
-          <div>
+          <div style={{ marginBottom: "8px" }}>
             { message }
           </div>
         )}

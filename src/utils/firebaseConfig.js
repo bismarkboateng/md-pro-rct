@@ -12,13 +12,13 @@ const firebaseConfig = {
   messagingSenderId: env.VITE_REACT_APP_MESSAGING_SENDER_ID,
   appId: env.VITE_REACT_APP_FIREBASE_APPID,
 };
-
+ 
 export const app = initializeApp(firebaseConfig)
 export const auth = getAuth(app)
 export const db = getFirestore()
 
 
 export const actionCodeSettings = {
-  url: "http://localhost:5173/confirm",
+  url: "https://md-pro-rct.netlify.app/confirm",
   handleCodeInApp: true,
 };

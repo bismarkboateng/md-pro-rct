@@ -27,15 +27,13 @@ export default function index() {
 
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("User"))
-    if (!user) {
+    const User = JSON.parse(localStorage.getItem("user"))
+    if (User) {
+      setUser(User)
+    } else {
       navigate("/")
     }
-    setUser(user)
   }, [])
-
-  console.log(user)
-
 
   return (
     <section className={classes.userPage}>

@@ -1,21 +1,142 @@
-// .mem__carousel {
 
-// }
+.mem__carousel {
+}
 
+.wrapper {
+    margin: 0 auto;
+}
+
+.image__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
 
 .carousel__header {
     font-weight: 400;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.carousel__description {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22.86px;
+    text-wrap: wrap;
+}
+
+.name {
+    font-size: 18px;
+    margin-top: 5%;
+}
+
+.carousel__image {
+    width: 40vw;
+    // object-fit: cover;
+}
+
+.content__wrapper {
+    margin-top: 10%;
+}
+
+.fcircle {
+    border-radius: 50%;
+    background: #f55181;
+}
+
+.scircle {
+    background: #34a245;
+    border-radius: 50%;
+}
+
 
 @media screen and (min-width: 280px) {
-//    .mem__carousel {
+    .wrapper {
+        width: 90%;
+        padding: 11% 0;
+    }
 
-//    }
    .carousel__header {
         font-size: 28px;
         line-height: 29.4px;
         letter-spacing: -0.56px;
-   } 
+   }
+
+   .image__wrapper {
+        margin-top: 13%;
+        margin-bottom: 5%;
+   }
+
+   .fcircle {
+        width: 20vw;
+        height: 36vw;
+    }
+
+    .scircle {
+        width: 5vw;
+        height: 32vw;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .carousel__image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .carousel__header {
+        text-align: center;
+        font-size: 40px;
+    }
+
+    .content__wrapper {
+        width: 85%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10%;
+    }
+
+    .image__wrapper {
+        margin-top: 5%;
+    }
+
+    .fcircle {
+        width: 75px;
+        height: 142.5px;
+    }
+
+    .scircle {
+        width: 27px;
+        height: 127.5px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .content__wrapper {
+        gap: 5%;
+    }
+
+    .carousel__description {
+        font-size: 22px;
+        width: 90%;
+    }
+}
+
+
+@media screen and (min-width: 1536px) {
+    .carousel__header {
+        font-size: 49px;
+    }
+
+    .content__wrapper {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .wrapper {
+        padding: 2%;
+    }
 }
