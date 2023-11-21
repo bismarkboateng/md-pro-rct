@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
-import styles from "./index.module.scss";
-import { Articles } from "./constants"
-import { ArticleCard, Spinner } from "../../components";
-
-import { app, db } from "../../utils/firebaseConfig"
+import { useState, useEffect } from "react"
 import { collection, getDocs } from "firebase/firestore"
+
+import styles from "./index.module.scss"
+import { Articles } from "./constants"
+import { ArticleCard, Spinner } from "../../components"
+import { app, db } from "../../utils/firebaseConfig"
 
 
 
@@ -12,11 +12,10 @@ import { collection, getDocs } from "firebase/firestore"
 export default function index() {
   const [articles, setArticles] = useState([])
   const [isLoading, setIsLoading] = useState(false)
-
+  
   const collectionRef = collection(db, "Articles")
   const articleImage = Articles[0].image
   const profileImage = Articles[0].profileImage
-  // let loader
 
 
   useEffect(() => {
@@ -31,13 +30,10 @@ export default function index() {
     fetchArticles()
   }, [])
 
-  // if (isLoading) {
-  //   loader = <Spinner  message="Loading articles...." spinner={styles.spinner} />
-  // }
-
   if (isLoading) {
     return <Spinner  message="Loading articles...." spinner={styles.spinner} />
   }
+
 
   return (
     <section className={styles.articles}>

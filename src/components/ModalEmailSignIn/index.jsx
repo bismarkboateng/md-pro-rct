@@ -1,22 +1,21 @@
 import { useState } from "react"
-import { sendSignInLinkToEmail } from "firebase/auth"
+import { sendSignInLinkToEmail, getAuth } from "firebase/auth"
 
 import { Input } from ".."
 import { Button } from ".."
-import { actionCodeSettings, auth } from "../../utils/firebaseConfig"
 import classes from "./index.module.scss"
+import { actionCodeSettings, app } from "../../utils/firebaseConfig"
 
 
 
-export default function index(props) {
+export default function index() {
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
+  const auth = getAuth()
 
+  const onInputFieldChange = event => setEmail(event.target.value)
 
-  function onInputFieldChange(event) {
-    setEmail(event.target.value)
-  }
-
+  
   function onClickEmailButton() {
     sendSignInLinkToEmail(auth, email, actionCodeSettings)
       .then(() => {
