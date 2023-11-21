@@ -18,7 +18,7 @@ export { default as FAQ } from "./FAQ";
 export { default as Modal } from "./Modal";
 export { default as FaqDrop } from "./FaqDrop";
 export { default as TextIconButton } from "./TextIconButton";
-export { default as ModalEmailSignIn } from "./ModalEmailSignIn";
+export { default as SignUp } from "./SignUp";
 export { default as Input } from "./Input";
 export { default as Search } from "./Search";
 export { default as ProfileDropDown } from "./ProfileDropDown";

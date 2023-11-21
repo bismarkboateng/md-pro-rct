@@ -1,9 +1,10 @@
-import classes from "./index.module.scss"
 import { createPortal } from "react-dom";
 import { useContext, useState } from "react";
-import ModalContext from "../../store/modal-context";
 import { VscClose } from "react-icons/vsc"
-import { ModalEmailSignIn } from ".."
+
+import classes from "./index.module.scss"
+import ModalContext from "../../store/modal-context";
+import { SignUp } from ".."
 
 
 
@@ -21,7 +22,7 @@ export default function index() {
           onClick={contextValue.onSignInClickHandler}
         />
         <div className={classes.modalContent}>
-          <ModalEmailSignIn />
+          <SignUp />
         </div>           
       </section>
 
