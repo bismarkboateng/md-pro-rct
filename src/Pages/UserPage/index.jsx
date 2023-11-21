@@ -27,10 +27,8 @@ export default function index() {
 
 
   useEffect(() => {
-    const User = JSON.parse(localStorage.getItem("user"))
-    if (User) {
-      setUser(User)
-    } else {
+    const user = JSON.parse(localStorage.getItem("user"))
+    if (!user) {
       navigate("/")
     }
   }, [])
