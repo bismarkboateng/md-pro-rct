@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app"
 import { getAuth } from "firebase/auth"
 import { getFirestore } from "firebase/firestore"
 
-// const env = import.meta.env
+const env = import.meta.env
 
 const firebaseConfig = {
   apiKey: env.VITE_REACT_APP_FIREBASE_API_KEY,
@@ -16,9 +16,3 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig)
 export const auth = getAuth(app)
 export const db = getFirestore()
-
-
-// export const actionCodeSettings = {
-//   url: "http://localhost:5173/confirm",
-//   handleCodeInApp: true,
-// };

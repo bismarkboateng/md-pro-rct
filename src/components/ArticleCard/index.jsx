@@ -21,8 +21,8 @@ export default function index({ article, articleImage, profileImage}) {
   }, [innerWidth])
 
 
-  const content = innerWidth <= 500 ? article.content.substring(0, 20) : article.content.slice(0, 15)
-  const title = innerWidth <= 500 ? article.title.substring(0, 20) : article.content.slice(0, 15)
+  const content = innerWidth <= 500 ? article.content.substring(0, 20) : article.content.slice(0, 60)
+  const title = innerWidth <= 500 ? article.title.substring(0, 30) : article.content.slice(0, 40)
 
   const createMarkup = (text) => {
     return {__html: text }
@@ -59,7 +59,7 @@ export default function index({ article, articleImage, profileImage}) {
 
       <div className={styles.svgImage}>
         <img
-          src={article.image} 
+          src={article.image || articleImage} 
           alt={article.title} 
           className={styles.articleImage}
         />

@@ -77,9 +77,24 @@
     font-size: 20px;
 }
 
-
 .text__editor {
     margin-top: 50px;
+}
+
+.publish__btn:active {
+    animation: bounce 0.7s ease;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1, 1)
+    }
+    50% {
+        transform: scale(0.5, 0.5);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
 }
 
 

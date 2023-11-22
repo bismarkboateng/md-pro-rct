@@ -40,6 +40,10 @@
     cursor: pointer;
 }
 
+.hero__button:active {
+    animation: bounce 0.7s ease;
+}
+
 .animation {
     margin-top: 40px;
     width: 35%;
@@ -69,6 +73,20 @@
     margin-bottom: 15px;
 }
 
+
+
+@keyframes bounce {
+    0% {
+        transform: scale(1, 1)
+    }
+    50% {
+        transform: scale(0.5, 0.5);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+
+}
 
 
 @media screen and (min-width: 1536px) {

@@ -16,30 +16,8 @@ export default function index() {
     useRef(null),
   ]
 
-
-  // function changeColor() {
-  //     spanRefs.forEach((elRef) => {
-  //       elRef.current.style.opacity = "0"
-        
-  //       setTimeout(() => {
-  //         elRef.current.style.opacity = "1"
-  //       }, 1300)
-  //     })
-  
-  // }
-
-  // useEffect(() => {
-
-  //   setInterval(() => {
-  //     changeColor()
-  //   }, 3000)
-    
-  // })
-
-
   return (
     <section className={styles.heroWrapper}>
-
       <div className={styles.wrapper}>
         <div className={styles.heroCurious}>
           <h1>Stay {" "} <span>
@@ -60,9 +38,6 @@ export default function index() {
             text="Start reading"
           />
         </div>
-
-
-
 
         <div className={styles.animation}>
 

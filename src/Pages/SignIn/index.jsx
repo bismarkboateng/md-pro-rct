@@ -76,7 +76,7 @@ export default function index(props) {
         <p className={classes.signIn}>
           New Here ? 
 
-          <Link to="/sign-in">
+          <Link to="/">
             <span className={classes.signInText}>
               create an account
             </span>

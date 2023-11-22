@@ -79,7 +79,6 @@ export default function index() {
               text="Publish"
               className={classes.publishBtn}
             />
-            {/* <p>...</p> */}
             <CiBellOn fontSize={26} style={{ cursor: "pointer"}}/>
             <img
               src={user.photoURL}
@@ -107,7 +106,6 @@ export default function index() {
           onChange={setArticle}
         />
       </div>
-
     </section>
   )
 }
