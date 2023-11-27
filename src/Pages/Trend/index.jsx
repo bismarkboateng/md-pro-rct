@@ -1,15 +1,18 @@
-import { useContext, useState } from "react"
-import { Link } from "react-router-dom"
+import { useContext, useState, useEffect } from "react"
+import { Link, useParams } from "react-router-dom"
+import { doc, getDoc } from "firebase/firestore" 
 import { BsMedium } from "react-icons/bs"
 import { SlNote } from "react-icons/sl"
 import { BiChevronDown } from "react-icons/bi"
 
 import { 
     Button, Navbar,
-    Search, Modal
+    Search, Modal, ArticleDetailContent
 } from "../../components"
+import { DefaultProfile } from "../../assets"
 import classes from "./index.module.scss"
 import { AppContext } from "../../store/app-context"
+import { db } from "../../utils/firebaseConfig"
 
 
 
@@ -17,9 +20,26 @@ import { AppContext } from "../../store/app-context"
 export default function index() {
   const { isSignInModalOpen, onSignInClickHandler} = useContext(AppContext)
   const [searchTerm, setSearchTerm] = useState("")
+  const [article, setArticle] = useState({})
+  const [isLoading, setIsLoading] = useState(false)
+  const { id } = useParams()
 
-  const user = false
-  const DefaultProfile = "https://cdn4.iconfinder.com/data/icons/nightlife-business-glyph/100/business_glyph-26-512.png"
+  const docRef = doc(db, "Articles", id)
+
+  useEffect(() => {
+    setIsLoading(true)
+    async function fetchSingleDoc() {
+      const docSnapshot = await getDoc(docRef)
+      if (docSnapshot.exists()) {
+        setArticle({ ...docSnapshot.data() })
+        setIsLoading(false)
+      } else {
+        alert("No such document!");
+      }
+    }
+    fetchSingleDoc()
+  }, [])
+
 
   return (
     <section>
@@ -55,13 +75,19 @@ export default function index() {
           </Button>
           <div className={classes.user} onClick={() => {}}>
             <img
-              src={user?.photoURL || DefaultProfile}
+              src={DefaultProfile}
               className={classes.userImage}
             />
             <BiChevronDown />
           </div>
         </div>
       </Navbar>
+
+      <div className={classes.detailWrapper}>
+        <ArticleDetailContent
+          article={article}
+        />
+      </div>
     </section>
   )
 }

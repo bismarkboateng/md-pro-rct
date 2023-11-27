@@ -36,7 +36,7 @@ export default function index() {
         setArticle({ ...docSnapshot.data() })
         setIsLoading(false)
       } else {
-        console.log("No such document!");
+        alert("No such document!");
       }
     }
     fetchSingleDoc()
