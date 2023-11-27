@@ -1,5 +1,7 @@
 import classes from "./index.module.scss"
-import { articleImage } from "../../assets"
+
+
+
 
 export default function index({ article }) {
  

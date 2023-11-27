@@ -1,7 +1,8 @@
-import styles from "./index.module.scss";
 import { PiTrendUpThin } from "react-icons/pi";
+
 import Data from "./Data";
 import { TrendCard } from ".."
+import styles from "./index.module.scss";
 
 
 export default function index() {
@@ -20,7 +21,7 @@ export default function index() {
               <TrendCard
                 item={item}
                 value="0"
-                key={item.index}
+                key={item.id}
               />
             ))
           }

@@ -5,13 +5,13 @@ import { Navbar, Modal, Navlinks } from "../../components"
 import { Button, Herosection, Trending, ArticleList, Discover } from "../../components"
 import { Links } from "./Links"
 import styles from "./index.module.scss";
-import ModalContext from "../../store/modal-context";
+import { AppContext } from "../../store/app-context";
 
 
 
 export default function index() {
   const [scrolling, setScrolling] = useState(false)
-  const contextValue = useContext(ModalContext)
+  const { onSignInClickHandler, isSignInModalOpen } = useContext(AppContext)
   
 
   useEffect(() => {
@@ -30,12 +30,12 @@ export default function index() {
     };
   }, []);
 
-  const handleClickAction = contextValue.onSignInClickHandler
+  const handleClickAction = onSignInClickHandler
 
 
   return (
     <section className={styles.home}>
-      { contextValue.isSignInModalOpen && <Modal /> }
+      { isSignInModalOpen && <Modal /> }
  
       <Navbar 
         scrolling={scrolling} 
@@ -52,7 +52,7 @@ export default function index() {
             className={styles.getStarted}
             btnBackground={styles.btnBackground}
             scrolling={scrolling}
-            onClick={contextValue.onSignInClickHandler}
+            onClick={onSignInClickHandler}
             text="Get started"
           />
         </section>

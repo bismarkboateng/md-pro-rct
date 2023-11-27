@@ -1,33 +1,19 @@
-import { useState, useEffect } from "react"
-import { collection, getDocs } from "firebase/firestore"
+import { useContext, useEffect } from "react"
 
 import styles from "./index.module.scss"
-import { Articles } from "./constants"
+import { AppContext } from "../../store/app-context"
 import { ArticleCard, Spinner } from "../../components"
-import { app, db } from "../../utils/firebaseConfig"
-
-
+import { Articles } from "./constants"
 
 
 export default function index() {
-  const [articles, setArticles] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
+  const { articles, onFetchArticles, isLoading } = useContext(AppContext)
   
-  const collectionRef = collection(db, "Articles")
   const articleImage = Articles[0].image
   const profileImage = Articles[0].profileImage
 
-
   useEffect(() => {
-    setIsLoading(true)
-    async function fetchArticles() {
-      const articleSnapshot = await getDocs(collectionRef)
-      articleSnapshot.docs.forEach((doc) => {
-        setArticles((prevArticles) => [...prevArticles, { ...doc.data(), id: doc.id }])
-      })
-      setIsLoading(false)
-    }
-    fetchArticles()
+    onFetchArticles()
   }, [])
 
   if (isLoading) {
@@ -37,7 +23,6 @@ export default function index() {
 
   return (
     <section className={styles.articles}>
-      {/* {loader} */}
       <ul className={styles.articleWrapper}>
         { articles.map((article) => (
             <ArticleCard

@@ -9,20 +9,20 @@ import {
 import { cta } from "./Style";
 import styles from "./index.module.scss";
 import Text from "./Text";
-import ModalContext from "../../store/modal-context";
+import { AppContext } from "../../store/app-context";
 
 
 
 
 export default function index() {
-  const contextValue = useContext(ModalContext)
+  const { onSignInClickHandler, isSignInModalOpen } = useContext(AppContext)
 
 
-  const handleClickAction = contextValue.onSignInClickHandler
+  const handleClickAction = onSignInClickHandler
   
   return (
     <section>
-      { contextValue.isSignInModalOpen && <Modal /> }
+      { isSignInModalOpen && <Modal /> }
 
       <Navbar nav={styles.nav}>
         <section className={styles.navWrapper}>

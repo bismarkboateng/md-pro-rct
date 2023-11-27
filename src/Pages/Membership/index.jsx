@@ -8,7 +8,7 @@ import {
 } from "../../components";
 import styles from "./index.module.scss";
 import { BsMedium } from "react-icons/bs";
-import ModalContext from "../../store/modal-context";
+import { AppContext } from "../../store/app-context";
 
 
 
@@ -17,8 +17,8 @@ export default function index() {
   const [scrolling, setScrolling] = useState(false)
   const [inWidth, setInWidth] = useState(false)
 
-  const contextValue = useContext(ModalContext)
-  const handleClickAction =contextValue.onSignInClickHandler
+  const { onSignInClickHandler, isSignInModalOpen } = useContext(AppContext)
+  const handleClickAction = onSignInClickHandler
   const linkColor = "#fff"
 
 
@@ -50,7 +50,7 @@ export default function index() {
 
   return (
    <main>
-    { contextValue.isSignInModalOpen && <Modal /> }
+    { isSignInModalOpen && <Modal /> }
 
     <Navbar 
       scrolling={scrolling}
@@ -78,7 +78,7 @@ export default function index() {
         />
         <Button
           className={styles.access}
-          onClick={contextValue.onSignInClickHandler}
+          onClick={onSignInClickHandler}
           text={text}
         />
       </section>

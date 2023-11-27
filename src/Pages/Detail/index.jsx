@@ -12,7 +12,7 @@ import { SlNote } from "react-icons/sl"
 import { BiChevronDown } from "react-icons/bi"
 import { BsMedium } from "react-icons/bs"
 import classes from "./index.module.scss"
-import ModalContext from "../../store/modal-context";
+import { AppContext } from "../../store/app-context";
 
 
 
@@ -24,7 +24,7 @@ export default function index() {
   const [user, setUser] = useState({})
   const [searchTerm, setSearchTerm] = useState("")
   const { articleId } = useParams()
-  const contextValue = useContext(ModalContext)
+  const { isSignInModalOpen, onSignInClickHandler } = useContext(AppContext)
 
   const docRef = doc(db, "Articles", articleId);
 
@@ -52,7 +52,7 @@ export default function index() {
 
   return (
     <section>
-      { contextValue.isSignInModalOpen && <Modal /> }
+      { isSignInModalOpen && <Modal /> }
 
       <Navbar
         nav={classes.nav}
@@ -72,13 +72,12 @@ export default function index() {
           <Button
             text="Sign up"
             className={classes.signUp}
-            onClick={contextValue.onSignInClickHandler}
+            onClick={onSignInClickHandler}
             buttonWrapper={classes.buttonWrapper}
           >
             <button
-              onClick={contextValue.onSignInClickHandler}
+              onClick={onSignInClickHandler}
               className={classes.signIn}
-            
             >
               Sign in
             </button>

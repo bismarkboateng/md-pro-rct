@@ -2,7 +2,7 @@ import {Route, Routes } from "react-router-dom";
 import { 
   About, Membership, Write, 
   Home, UserPage, Detail, 
-  Newstory, SignIn
+  Newstory, SignIn, Trend
 } from "./Pages";
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
         {/* <Route path="/confirm" element={<Confirm /> } /> */}
         <Route path="/new-story" element={<Newstory />} />
         <Route path="sign-in" element={<SignIn />}  />
+        <Route path="/trend/:id" element={<Trend />}  />
       </Routes>
     </div>
   )

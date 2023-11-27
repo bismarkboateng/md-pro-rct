@@ -1,0 +1,159 @@
+.spinner {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+}
+
+.search__field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: auto;
+}
+
+.medium__icon {
+    margin-right: 18px;
+    font-size: 45px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 15px 10px 20px;
+    border-bottom: 1px solid rgb(242, 242, 242);
+}
+
+.user__actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 45px;
+    font-size: 19px;
+    color: #6B6B6B;
+
+    i {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+        svg {
+            font-size: 20px;
+        } 
+    }
+}
+
+.button__wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.notification {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+        color: #6B6B6B;
+    }
+}
+
+.user__image {
+    border-radius: 50%;
+    width: 30%;
+}
+
+.sign__in {
+    border: none;
+    outline: none;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    background: white;
+    cursor: pointer;
+}
+
+.sign__up {
+    padding: 10px 14px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #1A8917;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.detail__wrapper {
+    width: 38%;
+    margin: auto;
+    margin-top: 4%;
+}
+
+@media screen and (min-width: 200px) {
+    .button__wrapper {
+        display: none;
+    }
+    
+    .user__image {
+        width: 30px;
+    }
+
+    .user__actions {
+        gap: 8px;
+    }
+
+    .medium__icon {
+        font-size: 35px;
+    }
+
+    .detail__wrapper {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    .medium__icon {
+        font-size: 40px;
+    }
+}
+
+
+@media screen and (min-width: 912px) {
+    .button__wrapper {
+        display: flex;
+        margin-left: 10px;
+    }
+
+    .detail__wrapper {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .detail__wrapper {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 1536px) {
+    .button__wrapper {
+        margin-right: 10px;
+        margin-left: 13px;
+    }
+
+    .detail__wrapper {
+        width: 38%;
+        margin: auto;
+        margin-top: 4%;
+    }
+}

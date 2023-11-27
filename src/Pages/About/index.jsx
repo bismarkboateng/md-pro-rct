@@ -6,20 +6,20 @@ import { Link } from "react-router-dom";
 import { Navbar, Button, CTA, Modal } from "../../components";
 import { cta } from "./styles";
 import { content } from "./Data";
-import ModalContext from "../../store/modal-context";
+import { AppContext } from "../../store/app-context";
 import styles from "./index.module.scss";
 
 
 
 export default function index() {
-  const contextValue = useContext(ModalContext)
+  const { isSignInModalOpen, onSignInClickHandler } = useContext(AppContext)
 
-  const handleClickAction =contextValue.onSignInClickHandler
+  const handleClickAction = onSignInClickHandler
 
 
   return (
     <section className={styles.about}>
-      { contextValue.isSignInModalOpen && <Modal /> }
+      { isSignInModalOpen && <Modal /> }
 
       <Navbar nav={styles.nav}>
         <section className={styles.navWrapper}>

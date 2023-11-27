@@ -1,7 +1,7 @@
+import { useState, useEffect } from "react"
 import { BsMedium } from "react-icons/bs"
 import { CiBellOn } from "react-icons/ci"
 import { Link } from "react-router-dom"
-import { useState, useEffect } from "react"
 import ReactQuill from "react-quill"
 import { collection, addDoc } from "firebase/firestore"
 import { useNavigate } from "react-router-dom"
