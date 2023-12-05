@@ -22,7 +22,15 @@ export default function index(props) {
         ))}
       </ul>
 
-      <div className={styles.seeMore}>See more topics</div>
+      
+        <Link
+          style={{ textDecoration: "none" }}
+          to={"/explore-topics"}
+        >
+          <div className={styles.seeMore}>
+              See more topics
+          </div>
+        </Link>
       <>
         {props.children}
       </>

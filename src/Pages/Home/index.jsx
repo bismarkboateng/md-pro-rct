@@ -1,8 +1,11 @@
 import { useState, useEffect, useContext } from "react";
 import { BsMedium } from "react-icons/bs";
 
-import { Navbar, Modal, Navlinks } from "../../components"
-import { Button, Herosection, Trending, ArticleList, Discover } from "../../components"
+import { 
+  Navbar, Modal, Navlinks, 
+  Button, Herosection, Trending, 
+  ArticleList, Discover
+} from "../../components"
 import { Links } from "./Links"
 import styles from "./index.module.scss";
 import { AppContext } from "../../store/app-context";

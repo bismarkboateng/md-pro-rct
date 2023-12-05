@@ -5,7 +5,7 @@ import { SlNote } from "react-icons/sl"
 import { BiChevronDown } from "react-icons/bi"
 
 import { 
-  Button, Navbar,
+  Button, Navbar, Spinner,
   Search, Modal, TagCard,
 } from "../../components"
 import { DefaultProfile } from "../../assets"
@@ -28,6 +28,8 @@ export default function index() {
   useEffect(() => {
     onFetchTagArticlesHandler()
   }, [])
+
+  const content = isLoading && <Spinner message="Loading!..." spinner={classes.spinner} />
 
 
   return (
@@ -88,6 +90,7 @@ export default function index() {
         <h2 className={classes.tagRecommend}>Recommended stories</h2>
 
         <section className={classes.content}>
+          {content}
           {tagArticles.map((article) => (
             <TagCard
               key={article?.id}

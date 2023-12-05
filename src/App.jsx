@@ -3,7 +3,7 @@ import {
   About, Membership, Write, 
   Home, UserPage, Detail, 
   Newstory, SignIn, Trend,
-  Tag
+  Tag, Explore
 } from "./Pages";
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
         <Route path="sign-in" element={<SignIn />}  />
         <Route path="/trend/:id" element={<Trend />}  />
         <Route path="/tag/:tag" element={<Tag />} />
+        <Route path="/explore-topics" element={<Explore />} />
       </Routes>
     </div>
   )
