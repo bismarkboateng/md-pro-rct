@@ -1,8 +1,6 @@
 import classes from "./index.module.scss"
 
 
-
-
 export default function index({ article }) {
  
   const createMarkup = (text) => {

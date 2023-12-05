@@ -1,0 +1,258 @@
+.spinner {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+}
+
+.search__field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: auto;
+}
+
+.medium__icon {
+    margin-right: 18px;
+    font-size: 45px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 15px 10px 20px;
+    border-bottom: 1px solid rgb(242, 242, 242);
+}
+
+.user__actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 45px;
+    font-size: 19px;
+    color: #6B6B6B;
+
+    i {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+        svg {
+            font-size: 20px;
+        } 
+    }
+}
+
+.button__wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.notification {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+        color: #6B6B6B;
+    }
+}
+
+.user__image {
+    border-radius: 50%;
+    width: 30%;
+}
+
+.sign__in {
+    border: none;
+    outline: none;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    background: white;
+    cursor: pointer;
+}
+
+.sign__up {
+    padding: 10px 14px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #1A8917;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.detail__wrapper {
+    width: 38%;
+    margin: auto;
+    margin-top: 4%;
+}
+
+.tag__header {
+    font-size: 24px;
+    color: #242424;
+    font-weight: 500;
+    letter-spacing: -0.016em;
+    line-height: 30px;
+    font-family: 'Helvetica Neue', sans-serif;
+    margin-bottom: 10px;
+}
+
+.tag__info {
+    font-size: 14px;
+    font-family: 'Helvetica Neue', sans-serif;
+    color:#6B6B6B;
+    line-height: 20px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.tagFollow {
+    padding: 8px 16px;
+    background: #191919;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Helvetica Neue', sans-serif;
+    line-height: 20px;
+    border-radius: 99em;
+    outline: none;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.tag__wrapper {
+    width: 80%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tag__recommend {
+    font-size: 20px;
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #242424;
+    line-height: 24px;
+    font-weight: 500;
+    margin-top: 10%;
+}
+
+.content__wrapper {
+    margin: auto;
+}
+
+
+.content {
+    display: grid;
+}
+
+@media screen and (min-width: 200px) {
+    .button__wrapper {
+        display: none;
+    }
+    
+    .user__image {
+        width: 30px;
+    }
+
+    .user__actions {
+        gap: 8px;
+    }
+
+    .medium__icon {
+        font-size: 35px;
+    }
+
+    .detail__wrapper {
+        width: 90%;
+    }
+
+    .content__wrapper {
+        width: 88%;
+    }
+
+}
+
+@media screen and (min-width: 375px) {
+    .medium__icon {
+        font-size: 40px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .content__wrapper {
+        width: 95%;
+    }
+
+    .tag__header {
+        font-size: 42px;
+    }
+
+    .tag__info {
+        font-size: 16px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .content {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 6%;
+        grid-row-gap: 4%;
+
+        margin-top: 4%;
+    }
+
+    .tag__recommend {
+        margin-top: 8%;
+        font-size: 24px;
+    }
+}
+
+
+@media screen and (min-width: 912px) {
+    .button__wrapper {
+        display: flex;
+        margin-left: 10px;
+    }
+
+    .detail__wrapper {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .detail__wrapper {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 1536px) {
+    .button__wrapper {
+        margin-right: 10px;
+        margin-left: 13px;
+    }
+
+    .detail__wrapper {
+        width: 38%;
+        margin: auto;
+        margin-top: 4%;
+    }
+
+    .content__wrapper {
+        width: 65%;
+        margin:  auto;
+    }
+}

@@ -2,7 +2,8 @@ import {Route, Routes } from "react-router-dom";
 import { 
   About, Membership, Write, 
   Home, UserPage, Detail, 
-  Newstory, SignIn, Trend
+  Newstory, SignIn, Trend,
+  Tag
 } from "./Pages";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/new-story" element={<Newstory />} />
         <Route path="sign-in" element={<SignIn />}  />
         <Route path="/trend/:id" element={<Trend />}  />
+        <Route path="/tag/:tag" element={<Tag />} />
       </Routes>
     </div>
   )

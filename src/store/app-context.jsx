@@ -3,21 +3,16 @@ import { collection, getDocs } from "firebase/firestore"
 import { app, db } from "../utils/firebaseConfig"
 
 
-
-// const ModalContext = createContext({
-//     isSignInModalOpen: false,
-//     onSignInClickHandler: () => {},
-// })
-
 export const AppContext = createContext({})
 
 export const AppContextProvider = (props) => {
     const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
     const [articles, setArticles] = useState([])
-    // const [trendingArticles, setTrendingArticles] = useState([])
+    const [tagArticles, setTagArticles] = useState([])
     const [isLoading, setIsLoading] = useState(false)
 
     const collectionRef = collection(db, "Articles")
+    const tagCollectionRef = collection(db, "Tag")
 
     const  onSignInClickHandler = () => {
         setIsSignInModalOpen(prevState => !prevState)
@@ -30,14 +25,21 @@ export const AppContextProvider = (props) => {
             articleSnapshot.docs.forEach((doc) => {
                 setArticles(prevArticle => [...prevArticle, { ...doc.data(), id: doc.id}])
             })
-            // articleSnapshot.docs.forEach((doc) => {
-            //     if(doc.data().trending) {
-            //         setTrendingArticles(prevTrendArticle => [...prevTrendArticle, { ...doc.data(), id: doc.id}])
-            //     }
-            // })
             setIsLoading(false)
         }
         fetchArticles()
+    }
+
+    const onFetchTagArticlesHandler = () => {
+        setIsLoading(true)
+        async function fetchTagArticles() {
+            const tagArticleSnapshot = await getDocs(tagCollectionRef)
+            tagArticleSnapshot.docs.forEach((doc) => {
+                setTagArticles(prevTagArticle => [...prevTagArticle, { ...doc.data(), id: doc.id}])
+            })
+            setIsLoading(false)
+        }
+        fetchTagArticles()
     }
 
     return (
@@ -46,8 +48,9 @@ export const AppContextProvider = (props) => {
                 isSignInModalOpen,
                 onSignInClickHandler,
                 articles,
-                // trendingArticles,
                 onFetchArticles,
+                onFetchTagArticlesHandler,
+                tagArticles,
                 isLoading,
             }}
         >

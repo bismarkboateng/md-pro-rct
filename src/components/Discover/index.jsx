@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import styles from "./index.module.scss";
 import { Tags } from "./constants";
 
@@ -9,9 +11,14 @@ export default function index(props) {
       <div className={styles.title}>{props.title}</div>
       <ul>
         { Tags.map((tag) => (
-          <li className={styles.tagItem} key={tag.index}>
-            { tag.title }
-          </li>
+          <Link 
+            style={{ textDecoration: "none"}} 
+            to={`/tag/${tag.title.toLowerCase().replace(/ /g, '-')}`}
+          >
+            <li className={styles.tagItem} key={tag.index}>
+              { tag.title }
+            </li>
+          </Link>
         ))}
       </ul>
 
