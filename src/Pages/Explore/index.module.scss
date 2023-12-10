@@ -135,6 +135,7 @@
     padding-top: 20px;
     padding-bottom: 20px;
     border-top: 1px solid #eeecec;
+    cursor: pointer;
 }
 
 .topic__text {
@@ -231,9 +232,22 @@
     }
 }
 
+
 @media screen and (min-width: 1280px) {
     .detail__wrapper {
         width: 60%;
+    }
+
+    .explore__title {
+        margin-bottom: 30px;
+    }
+
+    .explore__input__field__wrapper {
+        width: 50%;
+    }
+
+    .explore__topic__wrapper {
+        margin-top: 5%;
     }
 }
 
@@ -247,5 +261,15 @@
         width: 38%;
         margin: auto;
         margin-top: 4%;
+    }
+
+    .explore__topic__wrapper {
+        width: 70%;
+        margin: 4% auto;
+    }
+
+    .explore__input__field__wrapper {
+        width: 50%;
+        
     }
 }
