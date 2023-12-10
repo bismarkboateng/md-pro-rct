@@ -20,6 +20,7 @@
     align-items: center;
     gap: 4px;
     margin-top: 20px;
+    cursor: pointer;
 }
 
 .author__image {
@@ -40,10 +41,11 @@
 .tag__title {
     margin-top: 18px;
     font-size: 20px;
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
     line-height: 24px;
     color: #242424;
+    cursor: pointer;
 }
 
 .tag__content {
@@ -53,6 +55,7 @@
     font-weight: 400;
     font-family: 'Helvetica Neue', sans-serif;
     margin-top: 6px;
+    cursor: pointer;
 }
 
 .tag__info {

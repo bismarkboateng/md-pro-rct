@@ -16,7 +16,6 @@ function App() {
         <Route path="/partner-program" element={<Write />} />
         <Route path="/user-page" element={<UserPage/>} />
         <Route path="/read/:articleId" element={<Detail />} />
-        {/* <Route path="/confirm" element={<Confirm /> } /> */}
         <Route path="/new-story" element={<Newstory />} />
         <Route path="sign-in" element={<SignIn />}  />
         <Route path="/trend/:id" element={<Trend />}  />

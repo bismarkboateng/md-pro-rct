@@ -5,17 +5,29 @@ import { app, db } from "../utils/firebaseConfig"
 
 export const AppContext = createContext({})
 
+const initialState = {
+    life: false,
+    self: false,
+    work: false,
+    tech: false,
+}
+
 export const AppContextProvider = (props) => {
     const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
     const [articles, setArticles] = useState([])
     const [tagArticles, setTagArticles] = useState([])
     const [isLoading, setIsLoading] = useState(false)
+    const [clicked, setIsClicked] = useState(initialState)
 
     const collectionRef = collection(db, "Articles")
     const tagCollectionRef = collection(db, "Tag")
 
     const  onSignInClickHandler = () => {
         setIsSignInModalOpen(prevState => !prevState)
+    }
+
+    const handleClick = (click) => {
+        setIsClicked({...initialState, [click]: true })
     }
 
     const onFetchArticles = () => {
@@ -45,13 +57,11 @@ export const AppContextProvider = (props) => {
     return (
         <AppContext.Provider
             value = {{
-                isSignInModalOpen,
-                onSignInClickHandler,
-                articles,
-                onFetchArticles,
-                onFetchTagArticlesHandler,
-                tagArticles,
-                isLoading,
+                isSignInModalOpen, onSignInClickHandler,
+                articles, onFetchArticles,
+                onFetchTagArticlesHandler, tagArticles,
+                isLoading, handleClick,
+                clicked,
             }}
         >
             {props.children}

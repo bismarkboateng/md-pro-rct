@@ -4,20 +4,23 @@ import { BsMedium } from "react-icons/bs"
 import { SlNote } from "react-icons/sl"
 import { BiChevronDown } from "react-icons/bi"
 import { IoSearchOutline } from "react-icons/io5";
-import { MdKeyboardArrowDown } from "react-icons/md"
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md"
 
 import {
- Navbar, Search, Button
+ Navbar, Search, Button, LinkText
 } from "../../components"
 import { AppContext } from "../../store/app-context"
 import { DefaultProfile } from "../../assets"
+import { life, self, work, tech } from "./link-data"
 import classes from "./index.module.scss"
 
 
 export default function index() {
   const [searchTerm, setSearchTerm] = useState("")
   const [searchTopic, setSearchTopic] = useState("")
-  const { onSignInClickHandler } = useContext(AppContext)
+  const { 
+    onSignInClickHandler, handleClick, clicked,
+  } = useContext(AppContext)
 
   return (
     <section>
@@ -77,25 +80,103 @@ export default function index() {
 
         <section className={classes.exploreTopicWrapper}>
           <div className={classes.textArrowWrapper}>
-            <p className={classes.topicText}>Life</p>
-            <i><MdKeyboardArrowDown fontSize={25} className={classes.arrowIcon} /></i>
+            <p
+              className={classes.topicText}
+              onClick={() => handleClick("life")}>
+              Life
+            </p>
+            {clicked.life ? (
+            <i>
+              <MdKeyboardArrowUp
+                fontSize={25}
+                className={classes.arrowIcon}
+              />
+            </i>
+            ) : (
+            <i>
+              <MdKeyboardArrowDown
+                fontSize={25}
+                className={classes.arrowIcon}
+              />
+            </i>
+            )}
+
           </div>
+          {clicked.life && (<LinkText data={life} />)}
 
           <div className={classes.textArrowWrapper}>
-            <p className={classes.topicText}>Self Improvement</p>
-            <i><MdKeyboardArrowDown fontSize={25} className={classes.arrowIcon} /></i>
+            <p
+              className={classes.topicText}
+              onClick={() => handleClick("self")}
+              >
+              Self Improvement
+            </p>
+            {clicked.self ? (
+            <i>
+              <MdKeyboardArrowUp
+                fontSize={25}
+                className={classes.arrowIcon}
+              />
+            </i>
+            ) : (
+            <i>
+              <MdKeyboardArrowDown
+                fontSize={25}
+                className={classes.arrowIcon}
+              />
+            </i>
+            )}
           </div>
+          {clicked.self && (<LinkText data={self} />)}
 
           <div className={classes.textArrowWrapper}>
-            <p className={classes.topicText}>Work</p>
-            <i><MdKeyboardArrowDown fontSize={25} className={classes.arrowIcon} /></i>
+            <p
+              className={classes.topicText}
+              onClick={() => handleClick("work")}>
+                Work
+            </p>
+            {clicked.work ? (
+            <i>
+              <MdKeyboardArrowUp
+                fontSize={25}
+                className={classes.arrowIcon}
+              />
+            </i>
+            ) : (
+            <i>
+              <MdKeyboardArrowDown
+                fontSize={25}
+                className={classes.arrowIcon}
+              />
+            </i>
+            )}
           </div>
+          {clicked.work && (<LinkText data={work} />)}
 
           <div className={classes.textArrowWrapper}>
-            <p className={classes.topicText}>Technology</p>
-            <i><MdKeyboardArrowDown fontSize={25} className={classes.arrowIcon} /></i>
+            <p
+              className={classes.topicText}
+              onClick={() => handleClick("tech")}
+            >
+                Technology
+            </p>
+            {clicked.tech ? (
+            <i>
+              <MdKeyboardArrowUp
+                fontSize={25}
+                className={classes.arrowIcon}
+              />
+            </i>
+            ) : (
+            <i>
+              <MdKeyboardArrowDown
+                fontSize={25}
+                className={classes.arrowIcon}
+              />
+            </i>
+            )}
           </div>
-
+          {clicked.tech && (<LinkText data={tech} />)}
         </section>
 
       </section>

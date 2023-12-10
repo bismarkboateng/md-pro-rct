@@ -30,3 +30,4 @@ export { default as Navlinks } from "./Navlinks";
 export { default as Box } from "./Box";
 export { default as ArticleDetailContent } from "./ArticleDetailContent";
 export { default as TagCard } from "./TagCard";
+export { default as LinkText } from "./LinkText";
