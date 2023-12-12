@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { PiHandsClappingThin } from "react-icons/pi"
 import { FaRegComment } from "react-icons/fa"
 import { CiBookmarkPlus } from "react-icons/ci"
@@ -8,14 +9,12 @@ import classes from "./index.module.scss"
 
 
 export default function index({ article }) {
-  console.log(article)
 
   const createMarkup = (text) => {
     return {__html: text }
   }
 
   const content = article?.content.substring(0, 60)
-  console.log(content)
 
   return (
     <section className={classes.tagWrapper}>
@@ -36,10 +35,13 @@ export default function index({ article }) {
         <span className={classes.authorName}>{article?.author}</span>
       </div>
 
-      <div
-        dangerouslySetInnerHTML={createMarkup(article?.title)}
-        className={classes.tagTitle}
-      ></div>
+      <Link to={`/read/${article.id}`}
+      style={{ textDecoration: "none" }}>
+        <div
+          dangerouslySetInnerHTML={createMarkup(article?.title)}
+          className={classes.tagTitle}
+        ></div>
+      </Link>
 
       <div
         dangerouslySetInnerHTML={createMarkup(content)}

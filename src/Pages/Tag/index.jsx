@@ -81,7 +81,10 @@ export default function index() {
           <span>4.5M Followers</span>{" "}
           <span>347K Stories</span>
         </div>
-        <button className={classes.tagFollow}>
+        <button 
+          className={classes.tagFollow}
+          onClick={() => alert("coming soon...")}
+        >
           Follow
         </button>
       </section>
