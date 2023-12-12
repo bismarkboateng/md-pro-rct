@@ -1,4 +1,5 @@
-import {Route, Routes } from "react-router-dom";
+import { useEffect } from "react"
+import {Route, Routes, useNavigate} from "react-router-dom";
 import { 
   About, Membership, Write, 
   Home, UserPage, Detail, 
@@ -6,7 +7,19 @@ import {
   Tag, Explore
 } from "./Pages";
 
-function App() {
+
+export default function App() {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"))
+    if (user) {
+      navigate("/user-page")
+    } else {
+      navigate("/")
+    }
+  }, [])
+
   return (
     <div>
       <Routes>
@@ -25,5 +38,3 @@ function App() {
     </div>
   )
 }
-
-export default App

@@ -1,0 +1,41 @@
+.spinner {
+    position: absolute;
+    top: 90%;
+    left: 40%;
+}
+
+@media screen and (max-width: 1280px){
+    .articles {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .articles {
+        width: 100%;
+    }
+
+    .article__wrapper {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .articles {
+        width: 100%;
+    }
+
+    .article__wrapper {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .articles {
+        width: 100%;
+    }
+
+    .article__wrapper {
+        padding: 0;
+    }
+}

@@ -27,13 +27,19 @@ export default function index() {
   const { isSignInModalOpen, onSignInClickHandler } = useContext(AppContext)
 
   const docRef = doc(db, "Articles", articleId);
+  const tagRef = doc(db, "Tag", articleId);
 
   useEffect(() => {
     setIsLoading(true)
     async function fetchSingleDoc() {
       const docSnapshot = await getDoc(docRef)
+      const tagSnapshot = await getDoc(tagRef)
+      
       if (docSnapshot.exists()) {
         setArticle({ ...docSnapshot.data() })
+        setIsLoading(false)
+      } else if (tagSnapshot.exists()) {
+        setArticle({...tagSnapshot.data()})
         setIsLoading(false)
       } else {
         alert("No such document!");
