@@ -33,6 +33,16 @@
         }
     }
 }
+
+.input__wrapper {
+    display: flex;
+    width: 97%;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
 .text {
     text-align: center;
     color: #242424;
@@ -42,25 +52,28 @@
 }
 
 .input {
-    margin-top: 10px;
     border-top: 0px;
     border-right: 0px;
     border-left: 0px;
     border: 1px solid #ccc;
-    margin-bottom: 40px;
     outline: none;
     max-width: 250px;
-    padding: 15px 20px;
+    padding: 10px 20px;
     border-radius: 10px;
     font-size: 15px;
+    width: 50%;
 }
 
 .label {
-    margin-bottom: 5px;
+    width: 50%;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .sign__in {
-
+    width: 97%;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .sign__in__text {
@@ -68,8 +81,11 @@
     margin-left: 2px;
 }
 
+.button__wrapper {
+    width: 97%;
+}
+
 .create__button {
-    width: 250px;
     background: rgba(25, 25, 25, 1);
     padding: 12px 16px;
     font-size: 15px;
@@ -80,6 +96,8 @@
     cursor: pointer;
     font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-bottom: 20px;
+    margin-top: 20px;
+    width: 100%;
 }
 
 .email__button:hover {

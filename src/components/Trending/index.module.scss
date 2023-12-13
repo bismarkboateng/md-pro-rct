@@ -9,19 +9,21 @@
 }
 
 .trending__icon {
-    i {
-        border: 1.5px solid #000000;
-        border-radius: 100%;
-        padding: 2px;
-        margin-right: 15px;
-    }
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
 
-    span {
-        font-size: 16px;
-        font-weight: 600;
-        color: #242424;
-    }
+.trending__text {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #242424;
+}
 
+.trend__icon {
+    width: 8%;
+    
 }
 
 .trending__list__item {
@@ -31,6 +33,30 @@
     flex-wrap: wrap;
     gap: 3.3%;
     list-style-type: none;
+}
+
+@media screen and (min-width: 768px) {
+    .trend__icon {
+        width: 3%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .trend__icon {
+        width: 2.5%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .trend__icon {
+        width: 2.1%;
+    }   
+}
+
+@media screen and (min-width: 1536px) {
+    .trending__text {
+        margin-bottom: 3px;
+    }
 }
 
 @media screen and (max-width: 1280px) {

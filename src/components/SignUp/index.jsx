@@ -64,6 +64,7 @@ export default function index() {
         <Button
           className={classes.createButton}
           onClick={onCreateAccountHandler}
+          buttonWrapper={classes.buttonWrapper}
           text="Create Account"
         />
         <p className={classes.signIn}>
